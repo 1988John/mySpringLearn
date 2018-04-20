@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.jd.lease.gw.dao.LeaseWhiteListDao">
+<mapper namespace="com.foo.dao.user.UserDao">
 
 	<!-- 所有查询列 -->
 	<sql id="QUERY_COLUMN_LIST">
@@ -20,7 +20,7 @@
     </sql>
 
 	<!-- 插入deal记录 -->
-	<insert id="insertEntry" parameterType="leaseWhiteList" >
+	<insert id="insertEntry" parameterType="user" >
 		<![CDATA[
 			INSERT  INTO ]]>
         <include refid="QUERY_TABLE"/>
@@ -32,7 +32,7 @@
 	</insert>
 
 	<!-- 通过条件查询数据集合 -->
-	<select id="selectEntryByPin" parameterType="Integer" resultType="leaseWhiteList">
+	<select id="selectEntryByName" parameterType="Integer" resultType="user">
 		<![CDATA[SELECT]]>
 		<include refid="QUERY_COLUMN_LIST"/>
 		<include refid="QUERY_FROM_TABLE"/>
