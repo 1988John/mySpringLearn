@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xmlns:context="http://www.springframework.org/schema/context"
        xmlns:tx="http://www.springframework.org/schema/tx"
        xsi:schemaLocation="http://www.springframework.org/schema/beans 
     		http://www.springframework.org/schema/beans/spring-beans.xsd
-    		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
-       		http://www.springframework.org/schema/context 
-     		http://www.springframework.org/schema/context/spring-context.xsd"
+    		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd"
        default-autowire="byName">
 
 	<!-- BoneCP configuration -->
@@ -32,13 +29,13 @@
 	<bean id="sessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="masterDataSource" />
 		<property name="configLocation" value="classpath:sqlmap-config.xml" />
-        <property name="mapperLocations" value="classpath*:sqlmap/*/*.xml"></property>
+        <property name="mapperLocations" value="classpath*:sqlmap/*.xml"></property>
 	</bean>
 
 	<!--MyBatis的DAO 无需实现类配置 自动扫描实现mapper.xml文件方法-->
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
 		<property name="basePackage" value="com.jd.lease.gw.dao" />
-		<property name="annotationClass" value="com.jd.lease.gw.dao.repository.MyBatisRepository" />
+		<property name="annotationClass" value="com.foo.dao.repository.MyBatisRepository" />
 		<property name="sqlSessionFactoryBeanName" value="sessionFactory" />
 	</bean>
 
