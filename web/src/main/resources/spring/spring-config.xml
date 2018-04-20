@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <beans xmlns="http://www.springframework.org/schema/beans"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xmlns:context="http://www.springframework.org/schema/context"
+           xmlns:aop="http://www.springframework.org/schema/aop"
+           xsi:schemaLocation="http://www.springframework.org/schema/beans
+       		http://www.springframework.org/schema/beans/spring-beans.xsd
+       		http://www.springframework.org/schema/context
+       		http://www.springframework.org/schema/context/spring-context.xsd
+       		http://www.springframework.org/schema/aop
+       		http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <context:annotation-config />
+
+    <!-- Properties 加载 -->
+    <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+        <property name="locations">
+            <list>
+                <!-- 公共配置 -->
+                <value>classpath:important.properties</value>
+                <value>classpath:conf/jdbc.properties</value>
+            </list>
+        </property>
+    </bean>
+    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="systemPropertiesModeName" value="SYSTEM_PROPERTIES_MODE_OVERRIDE"/>
+        <property name="ignoreResourceNotFound" value="true"/>
+        <property name="properties" ref="propertyConfigurer"/>
+        <property name="fileEncoding" value="UTF-8"></property>
+    </bean>
+
+    <!-- 提供profile环境检测功能:dev/test/gamma/idc -->
+    <!--<bean id="profileService" class="com.jd.ershou.common.service.impl.ProfileServiceImpl">-->
+        <!--<property name="env" value="${init.conf.env}"/>-->
+    <!--</bean>-->
+
+    <!-- 动态代理开启 -->
+    <aop:aspectj-autoproxy proxy-target-class="true" />
+
+    <context:component-scan base-package="com.foo.web.controller" >
+        <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+    </context:component-scan>
+
+    <!-- 公共配置引入 -->
+    <import resource="classpath:spring/spring-config-dao.xml" />
+    <import resource="classpath:spring/spring-config-service.xml" />
+
+</beans>
