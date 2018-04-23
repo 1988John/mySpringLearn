@@ -19,6 +19,11 @@ public class UserController {
     @Resource
     private UserService userService;
 
+    /**
+     * todo 此处若返回Integer 则报错 待研究
+     * @author jiangwang
+     * 21:52 2018/4/23
+     */
     @RequestMapping(value = "/getCount", method={RequestMethod.GET},
             produces = {MediaType.APPLICATION_JSON_UTF8_VALUE})
     public  String getLeastLeasePrice(){
