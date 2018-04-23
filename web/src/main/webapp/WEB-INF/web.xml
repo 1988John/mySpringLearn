@@ -3,14 +3,10 @@
          xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
          id="WebApp_ID" version="2.5">
 
-  <display-name>lease-gw-web</display-name>
+  <display-name>mySpringLearn</display-name>
 
   <listener>
     <listener-class>org.springframework.web.util.WebAppRootListener</listener-class>
-  </listener>
-
-  <listener>
-    <listener-class>com.jd.lease.gw.web.listener.RequestContextListener</listener-class>
   </listener>
 
   <!-- Spring Config -->
@@ -67,50 +63,5 @@
     <filter-name>HiddenHttpMethodFilter</filter-name>
     <servlet-name>springmvc</servlet-name>
   </filter-mapping>
-
-  <!-- 静态文件访问URL不会进入springmvc -->
-  <servlet-mapping>
-    <servlet-name>default</servlet-name>
-    <url-pattern>*.jpg</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>default</servlet-name>
-    <url-pattern>*.png</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>default</servlet-name>
-    <url-pattern>*.jpeg</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>default</servlet-name>
-    <url-pattern>*.js</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>default</servlet-name>
-    <url-pattern>*.css</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>default</servlet-name>
-    <url-pattern>*.ico</url-pattern>
-  </servlet-mapping>
-  <!--XSS防御过滤器-->
-  <filter>
-    <filter-name>XssFilter</filter-name>
-    <filter-class>com.jd.lease.gw.web.interceptor.XssFilter</filter-class>
-  </filter>
-  <filter-mapping>
-    <filter-name>XssFilter</filter-name>
-    <url-pattern>/*</url-pattern>
-  </filter-mapping>
-  <!--cors过滤器解决跨域问题-->
-  <filter>
-    <filter-name>cors</filter-name>
-    <filter-class>com.jd.lease.gw.web.interceptor.SimpleCORSFilter</filter-class>
-  </filter>
-  <filter-mapping>
-    <filter-name>cors</filter-name>
-    <url-pattern>/*</url-pattern>
-  </filter-mapping>
-
 
 </web-app>

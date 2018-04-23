@@ -14,8 +14,7 @@
        		http://www.springframework.org/schema/mvc/spring-mvc.xsd"
        default-autowire="byName">
 
-    <mvc:annotation-driven conversion-service="conversionService" >
-    </mvc:annotation-driven>
+    <mvc:annotation-driven conversion-service="conversionService" />
 
     <mvc:default-servlet-handler />
 
@@ -25,8 +24,6 @@
         <property name="ignoreResourceNotFound" value="true"/>
         <property name="properties" ref="propertyConfigurer"/>
     </bean>
-
-    <aop:aspectj-autoproxy proxy-target-class="true" />
 
     <!-- mvc controller -->
     <context:component-scan base-package="com.foo.web.controller" use-default-filters="false">

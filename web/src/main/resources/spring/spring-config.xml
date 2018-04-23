@@ -26,23 +26,17 @@
         <property name="systemPropertiesModeName" value="SYSTEM_PROPERTIES_MODE_OVERRIDE"/>
         <property name="ignoreResourceNotFound" value="true"/>
         <property name="properties" ref="propertyConfigurer"/>
-        <property name="fileEncoding" value="UTF-8"></property>
+        <property name="fileEncoding" value="UTF-8"/>
     </bean>
-
-    <!-- 提供profile环境检测功能:dev/test/gamma/idc -->
-    <!--<bean id="profileService" class="com.jd.ershou.common.service.impl.ProfileServiceImpl">-->
-        <!--<property name="env" value="${init.conf.env}"/>-->
-    <!--</bean>-->
 
     <!-- 动态代理开启 -->
     <aop:aspectj-autoproxy proxy-target-class="true" />
 
-    <context:component-scan base-package="com.foo.web.controller" >
+    <context:component-scan base-package="com.foo" >
         <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
     </context:component-scan>
 
     <!-- 公共配置引入 -->
     <import resource="classpath:spring/spring-config-dao.xml" />
-    <import resource="classpath:spring/spring-config-service.xml" />
 
 </beans>
