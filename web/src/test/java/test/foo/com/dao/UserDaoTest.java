@@ -1,6 +1,7 @@
 package test.foo.com.dao;
 
 import com.foo.dao.user.UserDao;
+import com.foo.domain.user.User;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
@@ -22,9 +23,17 @@ public class UserDaoTest {
     private UserDao userDao;
 
     @Test
-    public void test(){
-//        int count = userDao.selectCount();
-//        logger.error("结果：{}",count);
+    public void selectCountTest(){
+        int count = userDao.selectCount();
+        logger.error("结果：{}",count);
+    }
+
+    @Test
+    public void insertTest(){
+        User user = new User();
+        user.setName("foo");
+        int i = userDao.insertEntry(user);
+        logger.error("结果：{}",i);
     }
 }
 

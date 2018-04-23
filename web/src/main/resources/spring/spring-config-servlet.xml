@@ -14,7 +14,7 @@
        		http://www.springframework.org/schema/mvc/spring-mvc.xsd"
        default-autowire="byName">
 
-    <mvc:annotation-driven conversion-service="conversionService" />
+    <mvc:annotation-driven />
 
     <mvc:default-servlet-handler />
 

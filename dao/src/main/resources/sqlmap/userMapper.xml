@@ -19,6 +19,13 @@
 		<![CDATA[FROM ]]> <include refid="QUERY_TABLE"/>
     </sql>
 
+	<!-- 全部条件(更多功能可以通过queryData扩展实现)  -->
+	<sql id="QUERY_WHERE_CLAUSE">
+		<where>
+			<if test="name != null "><![CDATA[AND name = #{name}]]></if>
+		</where>
+	</sql>
+
 	<!-- 插入deal记录 -->
 	<insert id="insertEntry" parameterType="user" >
 		<![CDATA[
