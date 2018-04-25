@@ -24,10 +24,9 @@ public class UserController {
      * @author jiangwang
      * 21:52 2018/4/23
      */
-    @RequestMapping(value = "/getCount", method={RequestMethod.GET},
-            produces = {MediaType.APPLICATION_JSON_UTF8_VALUE})
-    public  String getLeastLeasePrice(){
+    @RequestMapping(value = "/getCount", method={RequestMethod.GET})
+    public  Integer getLeastLeasePrice(){
 
-        return userService.selectCount()+"";
+        return userService.selectCount();
     }
 }
