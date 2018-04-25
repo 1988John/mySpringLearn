@@ -12,6 +12,7 @@
         <module>dao</module>
         <module>domain</module>
         <module>service</module>
+        <module>common</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -52,6 +53,11 @@
             <dependency>
                 <groupId>com.foo.spring</groupId>
                 <artifactId>service</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.foo.spring</groupId>
+                <artifactId>common</artifactId>
                 <version>${project.version}</version>
             </dependency>
 

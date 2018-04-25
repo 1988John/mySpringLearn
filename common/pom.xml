@@ -9,10 +9,10 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>service</artifactId>
+    <artifactId>common</artifactId>
     <packaging>war</packaging>
 
-    <name>service Maven Webapp</name>
+    <name>common Maven Webapp</name>
     <!-- FIXME change it to the project's website -->
     <url>http://www.example.com</url>
 
@@ -24,21 +24,13 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.foo.spring</groupId>
-            <artifactId>dao</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.foo.spring</groupId>
-            <artifactId>domain</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.foo.spring</groupId>
-            <artifactId>common</artifactId>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
         </dependency>
     </dependencies>
 
     <build>
-        <finalName>service</finalName>
+        <finalName>common</finalName>
         <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
             <plugins>
                 <plugin>
