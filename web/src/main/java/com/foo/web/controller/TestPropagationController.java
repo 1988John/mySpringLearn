@@ -38,7 +38,7 @@ public class TestPropagationController {
     }
 
     private Method getMethod (String methodName)throws Exception {
-        Class<?> clazz = Class.forName("com.jd.lease.gw.service.test.transaction.propagation.PropagationService");
+        Class<?> clazz = Class.forName("com.foo.service.transaction.propagation.PropagationService");
         return clazz.getMethod(methodName);
     }
 }

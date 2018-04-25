@@ -95,7 +95,7 @@ public class PropagationTest {
      */
     private Method getMethod (String methodName, Class<?>... parameterTypes){
         try {
-            Class<?> clazz = Class.forName("com.jd.lease.gw.service.test.transaction.propagation.PropagationService");
+            Class<?> clazz = Class.forName("com.foo.service.transaction.propagation.PropagationService");
             return clazz.getMethod(methodName,parameterTypes);
         } catch (Exception e) {
             e.printStackTrace();
