@@ -26,6 +26,8 @@ public class UserService {
     }
 
     public User selectUserByName(String name){
-        return userDao.selectEntryByName(name);
+        User user = new User();
+        user.setName(name);
+        return userDao.selectEntryByName(user);
     }
 }

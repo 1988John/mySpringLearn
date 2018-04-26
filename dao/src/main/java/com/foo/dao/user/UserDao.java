@@ -10,6 +10,6 @@ import com.foo.domain.user.User;
 @MyBatisRepository
 public interface UserDao {
     int insertEntry(User user);
-    User selectEntryByName(String name);
+    User selectEntryByName(User user);
     int selectCount();
 }

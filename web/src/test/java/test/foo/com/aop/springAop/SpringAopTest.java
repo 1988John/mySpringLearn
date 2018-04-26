@@ -9,10 +9,8 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 /**
- * 动态代理测试类 
- * @author zyb 
- * @since 2012-8-9 
- * 
+ * @author jiangwang
+ * 10:59 2018/4/26
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {"classpath:/spring/spring-config.xml"})
