@@ -130,6 +130,10 @@
             <groupId>cglib</groupId>
             <artifactId>cglib</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.101tec</groupId>
+            <artifactId>zkclient</artifactId>
+        </dependency>
     </dependencies>
 
     <build>
