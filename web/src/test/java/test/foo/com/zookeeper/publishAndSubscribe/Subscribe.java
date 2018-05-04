@@ -20,7 +20,7 @@ public class Subscribe  implements Watcher {
 
     public static void main(String[] args) {
         try {
-            String path  ="/zookeeper";
+            String path  ="/jiangwang";
             zk =  new ZooKeeper("127.0.0.1:2181",SESSION_TIMEOUT,new Subscribe());
             latch.await();
             System.out.println("zk connection");
