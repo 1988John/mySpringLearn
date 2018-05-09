@@ -7,7 +7,10 @@
         http://www.springframework.org/schema/aop
         http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
 
-    <bean id="daoImpl" class="com.foo.dao.aop.impl.DaoImpl" />
+    <!--<bean id="daoImpl" class="com.foo.dao.aop.impl.DaoImpl" />-->
+    <bean id="daoImpl" class="com.foo.dao.aop.impl.DaoImpl">
+        <property name="myName" value="jiangwang" />
+    </bean>
     <bean id="timeHandler" class="com.foo.service.aop.TimeHandler" />
 
     <aop:config proxy-target-class="true">

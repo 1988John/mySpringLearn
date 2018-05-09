@@ -10,7 +10,10 @@
        		http://www.springframework.org/schema/aop
        		http://www.springframework.org/schema/aop/spring-aop.xsd">
 
-    <context:annotation-config />
+    <!--<context:annotation-config />-->
+
+    <!-- 动态代理开启 -->
+    <!--<aop:aspectj-autoproxy proxy-target-class="true" />-->
 
     <!-- Properties 加载 -->
     <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertiesFactoryBean">
@@ -29,8 +32,6 @@
         <property name="fileEncoding" value="UTF-8"/>
     </bean>
 
-    <!-- 动态代理开启 -->
-    <aop:aspectj-autoproxy proxy-target-class="true" />
 
     <context:component-scan base-package="com.foo" >
         <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>

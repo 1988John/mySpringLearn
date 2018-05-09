@@ -7,6 +7,15 @@ import org.slf4j.LoggerFactory;
 public class DaoImpl implements Dao {
 
     private Logger logger = LoggerFactory.getLogger(getClass());
+    private String myName;
+
+    public String getMyName() {
+        return myName;
+    }
+
+    public void setMyName(String myName) {
+        this.myName = myName;
+    }
 
     @Override
     public void select() {
