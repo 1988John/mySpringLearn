@@ -1,7 +1,7 @@
 package com.foo.web.controller;
 
+import com.foo.service.annotation.PrintTime;
 import com.foo.service.user.UserService;
-import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -28,5 +28,12 @@ public class UserController {
     public  Integer getLeastLeasePrice(){
 
         return userService.selectCount();
+    }
+
+    @RequestMapping
+    @PrintTime
+    public  String name(){
+
+        return "foo";
     }
 }
