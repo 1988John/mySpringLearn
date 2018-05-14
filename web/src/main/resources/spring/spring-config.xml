@@ -13,7 +13,7 @@
     <context:annotation-config />
 
     <!-- 动态代理开启 -->
-    <!--<aop:aspectj-autoproxy proxy-target-class="true" />-->
+    <aop:aspectj-autoproxy proxy-target-class="true" />
 
     <!-- Properties 加载 -->
     <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertiesFactoryBean">
@@ -39,6 +39,6 @@
 
     <!-- 公共配置引入 -->
     <import resource="classpath:spring/spring-config-dao.xml" />
-    <import resource="classpath:spring/spring-printTime.xml" />
+    <!--<import resource="classpath:spring/spring-printTime.xml" />-->
 
 </beans>
