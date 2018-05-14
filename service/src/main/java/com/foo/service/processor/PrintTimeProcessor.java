@@ -8,8 +8,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * Description:
- * Created by jiangwang3 on 2018/5/9.
+ * @author jiangwang
+ * @date 11:28 2018/5/14
  */
 @Aspect
 public class PrintTimeProcessor {
@@ -17,10 +17,10 @@ public class PrintTimeProcessor {
     private Logger LOGGER = LoggerFactory.getLogger(getClass());
 
     @Pointcut("@annotation(com.foo.service.annotation.PrintTime)")
-    public void PrintTimePoint() {
+    public void printTimePoint() {
     }
 
-    @Around("PrintTimePoint()")
+    @Around("printTimePoint()")
     public Object process(ProceedingJoinPoint jp) throws Throwable{
         LOGGER.error("开始运行程序。。。Start==>");
 

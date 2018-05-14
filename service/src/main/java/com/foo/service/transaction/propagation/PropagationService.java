@@ -19,7 +19,7 @@ import java.lang.reflect.Method;
  * Description:
  * Created by jiangwang3 on 2018/4/18.
  */
-@Service
+//@Service
 public class PropagationService {
     private Logger logger = LoggerFactory.getLogger(getClass());
     @Resource

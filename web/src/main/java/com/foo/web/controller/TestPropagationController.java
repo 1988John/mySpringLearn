@@ -12,7 +12,7 @@ import java.lang.reflect.Method;
  * Description:
  * Created by jiangwang3 on 2018/4/19.
  */
-@RestController
+//@RestController
 public class TestPropagationController {
     @Resource
     private PropagationService propagationService;

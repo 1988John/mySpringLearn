@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.annotation.Resource;
 
 /**
- * Description:
- * Created by jiangwang3 on 2018/4/23.
+ * @author jiangwang
+ * @date  2018/5/14
  */
 @RestController
 @RequestMapping(value = "/user")
@@ -19,8 +19,22 @@ public class UserController {
     @Resource
     private UserService userService;
 
+    @RequestMapping(value = "/serviceAspect", method={RequestMethod.GET})
+    public  String serviceAspect(){
+
+        return userService.serviceAspect();
+    }
+
+    @RequestMapping(value = "/controllerAspect", method={RequestMethod.GET})
+    @PrintTime
+    public  String name(){
+
+        return "controllerAspect";
+    }
+
     /**
-     * todo 此处若返回Integer 则报错 待研究
+     * 此处之前返回Integer 报错。原因：将对象转为json，spring默认使用fastjson。
+     * 解决方法：添加fastjson包即可
      * @author jiangwang
      * 21:52 2018/4/23
      */
@@ -28,12 +42,5 @@ public class UserController {
     public  Integer getLeastLeasePrice(){
 
         return userService.selectCount();
-    }
-
-    @RequestMapping
-    @PrintTime
-    public  String name(){
-
-        return "foo";
     }
 }

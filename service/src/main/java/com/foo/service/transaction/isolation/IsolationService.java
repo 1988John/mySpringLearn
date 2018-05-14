@@ -17,7 +17,7 @@ import javax.annotation.Resource;
  * Description:
  * Created by jiangwang3 on 2018/4/18.
  */
-@Service
+//@Service
 public class IsolationService {
     private Logger logger = LoggerFactory.getLogger(getClass());
 
