@@ -22,11 +22,15 @@ public class PrintTimeProcessor {
 
     @Around("printTimePoint()")
     public Object process(ProceedingJoinPoint jp) throws Throwable{
+        System.out.println();
+
         LOGGER.error("开始运行程序。。。Start==>");
 
         Object proceed = jp.proceed();
 
         LOGGER.error("结束啦，运行结束==>");
+
+        System.out.println();
 
         return proceed;
     }
