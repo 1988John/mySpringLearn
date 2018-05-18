@@ -11,9 +11,10 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Description:
- * Created by jiangwang3 on 2018/5/7.
+ * @author jiangwang
+ * @date 16:35 2018/5/18
  */
+
 public class CommonUtils
 {
     /**
@@ -28,7 +29,7 @@ public class CommonUtils
         BeanWrapper beanWrapper = PropertyAccessorFactory.forBeanPropertyAccess(target);
         beanWrapper.setAutoGrowNestedPaths(true);
         PropertyValues propertyValues = new MutablePropertyValues(source);
-        beanWrapper.setPropertyValues(propertyValues, true /* 忽略source中有, 但target中没有的属性 */);
+        beanWrapper.setPropertyValues(propertyValues, true );
     }
 
     public static void main(String[] args) {
