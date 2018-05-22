@@ -1,5 +1,6 @@
 package com.foo.web.controller;
 
+import com.foo.domain.user.User;
 import com.foo.service.annotation.PrintTime;
 import com.foo.service.user.UserService;
 import org.slf4j.Logger;
@@ -46,5 +47,10 @@ public class UserController {
     public  Integer getLeastLeasePrice(){
 
         return userService.selectCount();
+    }
+
+    @RequestMapping(value = "/showUser", method={RequestMethod.GET})
+    public String showUser(User user){
+        return user.toString();
     }
 }
