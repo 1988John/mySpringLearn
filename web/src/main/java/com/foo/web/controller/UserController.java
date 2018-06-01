@@ -2,11 +2,9 @@ package com.foo.web.controller;
 
 import com.foo.domain.user.User;
 import com.foo.service.annotation.PrintTime;
-import com.foo.service.listener.MyTestEventPubLisher;
 import com.foo.service.user.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;

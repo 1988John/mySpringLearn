@@ -5,13 +5,13 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Component;
 
 @Component
-public class MyTestEventPubLisher {
+public class MyEventPublisher {
     @Autowired
     private ApplicationContext applicationContext;
 
     // 事件发布方法
     public void pushListener(String msg) {
-        applicationContext.publishEvent(new MyTestEvent(this, msg));
+        applicationContext.publishEvent(new MyEvent(this, msg));
     }
 
 }

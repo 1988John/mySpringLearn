@@ -5,10 +5,10 @@ import org.springframework.stereotype.Component;
 
 
 @Component
-public class MyNoAnnotationListener implements ApplicationListener<MyTestEvent>{
+public class MyListener implements ApplicationListener<MyEvent>{
 
     @Override
-    public void onApplicationEvent(MyTestEvent event) {
+    public void onApplicationEvent(MyEvent event) {
         System.out.println("非注解监听器：" + event.getMsg());
     }
 

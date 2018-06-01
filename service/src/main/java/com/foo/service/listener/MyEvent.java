@@ -2,7 +2,7 @@ package com.foo.service.listener;
 
 import org.springframework.context.ApplicationEvent;
 
-public class MyTestEvent extends ApplicationEvent{
+public class MyEvent extends ApplicationEvent{
     /**
      * 
      */
@@ -10,7 +10,7 @@ public class MyTestEvent extends ApplicationEvent{
 
     private String msg ;
 
-    public MyTestEvent(Object source,String msg) {
+    public MyEvent(Object source, String msg) {
         super(source);
         this.msg = msg;
     }

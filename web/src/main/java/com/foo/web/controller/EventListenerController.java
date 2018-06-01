@@ -1,18 +1,17 @@
 package com.foo.web.controller;
 
-import com.foo.service.listener.MyTestEventPubLisher;
+import com.foo.service.listener.MyEventPublisher;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
 @RequestMapping(value = "/event")
-public class TestEventListenerController {
+public class EventListenerController {
 
     @Autowired
-    private MyTestEventPubLisher publisher;
+    private MyEventPublisher publisher;
 
     @RequestMapping(value = "/test" )
     public void testPublishEvent(){
