@@ -17,7 +17,7 @@ public class EvolvedFreshListener implements ApplicationListener<ContextRefreshe
     public void onApplicationEvent(ContextRefreshedEvent event) {
         if (event.getApplicationContext().getParent() == null){
 //            System.out.println();
-//            logger.error("进化版====初始化项目。。。。");
+//            logger.error("进化版====将有权限人员放入缓存。。。。");
 //            System.out.println();
         }
 

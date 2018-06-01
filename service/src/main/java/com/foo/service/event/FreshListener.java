@@ -16,7 +16,8 @@ public class FreshListener implements ApplicationListener<ContextRefreshedEvent>
     @Override
     public void onApplicationEvent(ContextRefreshedEvent event) {
         System.out.println();
-        logger.error("初始化项目。。。。");
+        //业务代码
+        logger.error("将有权限人员放入缓存。。。。");
         System.out.println();
     }
 }
