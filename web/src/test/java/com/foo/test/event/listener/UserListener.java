@@ -6,6 +6,6 @@ import java.util.EventListener;
 
 public interface UserListener extends EventListener {
 
-    public void onRegister(UserEvent event);
+    void onRegister(UserEvent event);
 
 }

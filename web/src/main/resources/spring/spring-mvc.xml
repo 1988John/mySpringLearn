@@ -31,7 +31,7 @@
     <!-- mvc controller -->
     <context:component-scan base-package="com.foo.web.controller" use-default-filters="false">
         <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
-        <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Service" />
+        <context:include-filter type="annotation" expression="org.springframework.web.bind.annotation.ControllerAdvice"/>
     </context:component-scan>
 
 
@@ -42,6 +42,6 @@
         <property name="cookieMaxAge" value="2147483647"/>
     </bean>
 
-    <import resource="classpath:spring/spring-printTime.xml" />
+    <!--<import resource="classpath:spring/spring-printTime.xml" />-->
 
 </beans>

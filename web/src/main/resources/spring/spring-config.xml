@@ -35,10 +35,11 @@
 
     <context:component-scan base-package="com.foo" >
         <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+        <context:exclude-filter type="annotation" expression="org.springframework.web.bind.annotation.ControllerAdvice"/>
     </context:component-scan>
 
     <!-- 公共配置引入 -->
     <import resource="classpath:spring/spring-config-dao.xml" />
-    <!--<import resource="classpath:spring/spring-printTime.xml" />-->
+    <import resource="classpath:spring/spring-printTime.xml" />
 
 </beans>

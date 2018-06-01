@@ -8,8 +8,11 @@
        default-autowire="byName">
 
 	<!-- BoneCP configuration -->
-	<bean id="abstractDataSource" abstract="true" class="com.jolbox.bonecp.BoneCPDataSource" destroy-method="close">
+	<bean id="dataSource"  class="com.jolbox.bonecp.BoneCPDataSource" destroy-method="close">
 		<property name="driverClass" value="${jdbc.driverClass}" />
+        <property name="jdbcUrl" value="${jdbc.jdbcUrl}" />
+        <property name="username" value="${jdbc.username}" />
+        <property name="password" value="${jdbc.password}" />
 		<property name="idleConnectionTestPeriodInMinutes" value="${jdbc.idleConnectionTestPeriod}" />
 		<property name="idleMaxAgeInMinutes" value="${jdbc.idleMaxAge}" />
 		<property name="maxConnectionsPerPartition" value="${jdbc.maxConnectionsPerPartition}" />
@@ -17,17 +20,11 @@
 		<property name="partitionCount" value="${jdbc.partitionCount}" />
 		<property name="acquireIncrement" value="${jdbc.acquireIncrement}" />
 		<property name="statementsCacheSize" value="${jdbc.statementsCacheSize}" />
-		<property name="releaseHelperThreads" value="${jdbc.releaseHelperThreads}" />
 	</bean>
-	<bean id="masterDataSource" parent="abstractDataSource">
-		<property name="jdbcUrl" value="${jdbc.jdbcUrl}" />
-		<property name="username" value="${jdbc.username}" />
-		<property name="password" value="${jdbc.password}" />
-	</bean>
-	
+
 	<!-- 集成Mybatis -->
 	<bean id="sessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
-		<property name="dataSource" ref="masterDataSource" />
+		<property name="dataSource" ref="dataSource" />
 		<property name="configLocation" value="classpath:sqlmap-config.xml" />
         <property name="mapperLocations" value="classpath*:sqlmap/*.xml"/>
 	</bean>
@@ -35,22 +32,12 @@
 	<!--MyBatis的DAO 无需实现类配置 自动扫描实现mapper.xml文件方法-->
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
 		<property name="basePackage" value="com.foo.dao" />
-		<property name="annotationClass" value="com.foo.dao.repository.MyBatisRepository" />
 		<property name="sqlSessionFactoryBeanName" value="sessionFactory" />
-	</bean>
-
-
-	<bean id="sqlTemplate" class="org.mybatis.spring.SqlSessionTemplate" scope="prototype">
-		<constructor-arg index="0" ref="sessionFactory" />
-	</bean>
-	<bean id="batchSqlTemplate" class="org.mybatis.spring.SqlSessionTemplate" scope="prototype">
-		<constructor-arg index="0" ref="sessionFactory" />
-		<constructor-arg index="1" value="BATCH" />
 	</bean>
 
 	<!-- 配置事务管理器 -->
 	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
-		<property name="dataSource" ref="masterDataSource" />
+		<property name="dataSource" ref="dataSource" />
 	</bean>
 
     <tx:annotation-driven transaction-manager="transactionManager" />

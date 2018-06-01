@@ -1,20 +1,20 @@
 package com.foo.test.event;
 
 import com.foo.test.event.domain.User;
-import com.foo.test.event.listener.SendEmailListener;
+import com.foo.test.event.listener.SendSmsListener;
 import com.foo.test.event.service.UserService;
 
-public class Test {
+public class EventApp {
 
     public static void main(String[] args) {
 
         UserService service = new UserService();
 
-        service.addListeners(new SendEmailListener());
+        service.addListeners(new SendSmsListener());
 
         //添加其他监听器 ...
 
-        User user = new User("zhangsan", "123456", "zhangsan@huawei.com");
+        User user = new User("foo", "123456", "注册成功啦！！");
 
         service.register(user);
     }
