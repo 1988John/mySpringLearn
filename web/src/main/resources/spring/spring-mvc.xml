@@ -19,7 +19,7 @@
     <mvc:default-servlet-handler />
 
     <!-- 动态代理开启 -->
-    <aop:aspectj-autoproxy/>
+    <!--<aop:aspectj-autoproxy/>-->
 
     <!-- Properties 加载 -->
     <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">

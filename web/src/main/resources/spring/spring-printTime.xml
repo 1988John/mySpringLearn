@@ -6,4 +6,6 @@
 
     <bean class="com.foo.service.processor.PrintTimeProcessor"/>
 
+    <!--<bean class="com.foo.service.aop.TimeHandlerAspect"/>-->
+
 </beans>

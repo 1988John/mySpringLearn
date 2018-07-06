@@ -30,6 +30,10 @@ public class UserService {
         return userDao.selectCount();
     }
 
+    public void addUser(){
+        logger.info("UserService-addUser:添加一个用户");
+    }
+
     public User selectUserByName(String name){
         User user = new User();
         user.setName(name);

@@ -19,12 +19,12 @@ public class DaoImpl implements Dao {
 
     @Override
     public void select() {
-        logger.error("Enter DaoImpl.select()");
+        logger.info("Enter DaoImpl.select()");
     }
 
     @Override
     public void insert() {
-        logger.error("Enter DaoImpl.insert()");
+        logger.info("Enter DaoImpl.insert()");
     }
     
 }

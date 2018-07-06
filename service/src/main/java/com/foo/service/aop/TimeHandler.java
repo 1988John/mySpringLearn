@@ -7,8 +7,14 @@ public class TimeHandler {
 
     private Logger logger = LoggerFactory.getLogger(getClass());
 
-    public void printTime() {
-        logger.error("CurrentTime:" + System.currentTimeMillis());
+    public void printTimeBefore() {
+        System.out.println();
+        logger.error("before-currentTime:" + System.currentTimeMillis());
+    }
+
+    public void printTimeAfter() {
+        logger.error("after-currentTime:" + System.currentTimeMillis());
+        System.out.println();
     }
     
 }

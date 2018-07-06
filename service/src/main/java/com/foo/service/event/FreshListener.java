@@ -17,7 +17,7 @@ public class FreshListener implements ApplicationListener<ContextRefreshedEvent>
     public void onApplicationEvent(ContextRefreshedEvent event) {
         System.out.println();
         //业务代码
-        logger.error("将有权限人员放入缓存。。。。");
-        System.out.println();
+//        logger.error("将有权限人员放入缓存。。。。");
+//        System.out.println();
     }
 }

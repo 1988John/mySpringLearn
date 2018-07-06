@@ -57,4 +57,19 @@ public class UserController {
     public String showUser(User user){
         return user.toString();
     }
+
+    @RequestMapping(value = "/sleep", method={RequestMethod.GET})
+    public String sleep(int time,boolean interrupt){
+        try {
+            if (interrupt){
+                Thread.interrupted();
+            }
+            Thread.sleep(time);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return "abc";
+    }
+
+
 }

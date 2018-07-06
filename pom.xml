@@ -255,6 +255,13 @@
                 <version>1.2.2</version>
             </dependency>
 
+            <!-- http://repo1.maven.org/maven2/com/xuxueli/xxl-job-core/ -->
+            <dependency>
+                <groupId>com.xuxueli</groupId>
+                <artifactId>xxl-job-core</artifactId>
+                <version>1.8.0</version>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 
