@@ -14,7 +14,7 @@ import javax.annotation.Resource;
  * @author jiangwang
  * @date 11:34 2018/5/14
  */
-@Service
+//@Service
 public class UserService {
     private Logger logger = LoggerFactory.getLogger(getClass());
     @Resource

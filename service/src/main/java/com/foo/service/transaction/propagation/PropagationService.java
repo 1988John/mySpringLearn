@@ -82,9 +82,9 @@ public class PropagationService {
         });
     }
 
-//    @Transactional
+    @Transactional
     public int defaultExecute(String name){
-        insertEntry(name);
+//        insertEntry(name);
         return 110;
     }
 

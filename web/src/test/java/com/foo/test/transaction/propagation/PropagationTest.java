@@ -2,6 +2,7 @@ package com.foo.test.transaction.propagation;
 
 import com.foo.service.transaction.propagation.PropagationService;
 import com.foo.service.user.UserService;
+import com.foo.test.BaseTest;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
@@ -16,9 +17,7 @@ import java.lang.reflect.Method;
  * Description: 事物 隔离级别测试
  * Created by jiangwang3 on 2018/4/18.
  */
-@RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = {"classpath:/spring/spring-config.xml"})
-public class PropagationTest {
+public class PropagationTest extends BaseTest{
     @Resource
     private PropagationService propagationService;
 
@@ -54,7 +53,8 @@ public class PropagationTest {
     @Test
     public void transactionAnnotationTest(){
         String name = "01112321b85";
-        propagationService.defaultExecute(name);
+        int i = propagationService.defaultExecute(name);
+        logger.error("jieguo:{}",i);
     }
 
 

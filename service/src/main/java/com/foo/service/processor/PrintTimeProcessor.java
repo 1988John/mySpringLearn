@@ -6,12 +6,16 @@ import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Component;
+
+import java.util.Date;
 
 /**
  * @author jiangwang
  * @date 11:28 2018/5/14
  */
 @Aspect
+@Component
 public class PrintTimeProcessor {
 
     private Logger LOGGER = LoggerFactory.getLogger(getClass());
@@ -24,11 +28,11 @@ public class PrintTimeProcessor {
     public Object process(ProceedingJoinPoint jp) throws Throwable{
         System.out.println();
 
-        LOGGER.error("开始运行程序。。。Start==>");
+        LOGGER.error("开始运行程序。。。Start==>{}",new Date());
 
         Object proceed = jp.proceed();
 
-        LOGGER.error("结束啦，运行结束==>");
+        LOGGER.error("结束啦，运行结束==>{}",new Date());
 
         System.out.println();
 
