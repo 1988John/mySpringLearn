@@ -15,14 +15,14 @@ public class MyInvocationHandler implements InvocationHandler {
     // 目标对象   
     private Object target;  
       
-    /** 
-     * 构造方法 
-     * @param target 目标对象  
-     */  
-    MyInvocationHandler(Object target) {
-        super();  
-        this.target = target;  
-    }  
+    /**
+     * 构造方法
+     * @param target 目标对象
+     */
+//    MyInvocationHandler(Object target) {
+//        super();
+//        this.target = target;
+//    }
   
   
     /** 
@@ -50,5 +50,13 @@ public class MyInvocationHandler implements InvocationHandler {
      Object getProxy() {
         return Proxy.newProxyInstance(Thread.currentThread().getContextClassLoader(),
                 target.getClass().getInterfaces(), this);  
-    }  
-}  
+    }
+
+    public Object getTarget() {
+        return target;
+    }
+
+    public void setTarget(Object target) {
+        this.target = target;
+    }
+}

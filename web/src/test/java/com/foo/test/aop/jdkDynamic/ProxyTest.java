@@ -36,7 +36,8 @@ public class ProxyTest {
         UserService userService = new UserServiceImpl();
 
         // 实例化InvocationHandler
-        MyInvocationHandler invocationHandler = new MyInvocationHandler(userService);
+        MyInvocationHandler invocationHandler = new MyInvocationHandler();
+        invocationHandler.setTarget(userService);
 
         // 根据目标对象生成代理对象
         UserService proxy = (UserService) invocationHandler.getProxy();
