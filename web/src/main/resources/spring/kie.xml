@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:kie="http://drools.org/schema/kie-spring"
+	xsi:schemaLocation="http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd
+    http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://drools.org/schema/kie-spring http://drools.org/schema/kie-spring.xsd" >
+        
+	<kie:kmodule id="bookstore-kmodule">
+		<kie:kbase name="bookprice_kbase" packages="rules.bookstore.price">
+			<kie:ksession name="bookprice_ksession" scope="prototype" />
+		</kie:kbase>
+	</kie:kmodule>
+	
+	<context:component-scan base-package="com.bigfish"/>
+	
+	<!-- <bean id="kiePostProcessor" class="org.kie.spring.KModuleBeanFactoryPostProcessor" />  -->
+	<bean id="kiePostProcessor"
+		class="org.kie.spring.annotations.KModuleAnnotationPostProcessor " />
+	
+
+</beans>

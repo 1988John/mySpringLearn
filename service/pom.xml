@@ -12,7 +12,7 @@
     <artifactId>service</artifactId>
     <packaging>war</packaging>
 
-    <name>service Maven Webapp</name>
+    <name>service</name>
     <!-- FIXME change it to the project's website -->
     <url>http://www.example.com</url>
 
@@ -39,6 +39,43 @@
             <groupId>org.aspectj</groupId>
             <artifactId>aspectjweaver</artifactId>
         </dependency>
+
+
+        <!--<dependency>-->
+            <!--<groupId>org.drools</groupId>-->
+            <!--<artifactId>drools-core</artifactId>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+            <!--<groupId>org.drools</groupId>-->
+            <!--<artifactId>drools-decisiontables</artifactId>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+            <!--<groupId>org.kie</groupId>-->
+            <!--<artifactId>kie-api</artifactId>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+            <!--<groupId>org.drools</groupId>-->
+            <!--<artifactId>drools-compiler</artifactId>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+            <!--<groupId>org.drools</groupId>-->
+            <!--<artifactId>knowledge-api</artifactId>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+            <!--<groupId>org.kie</groupId>-->
+            <!--<artifactId>kie-internal</artifactId>-->
+        <!--</dependency>-->
+
+        <!--<dependency>-->
+            <!--<groupId>org.kie</groupId>-->
+            <!--<artifactId>kie-spring</artifactId>-->
+        <!--</dependency>-->
+        <!-- <dependency> <groupId>org.kie</groupId> <artifactId>kie-ci</artifactId>
+            <version>${drools.version}</version> </dependency> -->
+        <!--<dependency>-->
+            <!--<groupId>org.jbpm</groupId>-->
+            <!--<artifactId>jbpm-kie-services</artifactId>-->
+        <!--</dependency>-->
 
     </dependencies>
 
