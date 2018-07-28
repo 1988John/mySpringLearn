@@ -16,10 +16,6 @@
     <mvc:annotation-driven />
 
     <mvc:default-servlet-handler />
-
-    <!-- 动态代理开启 -->
-    <!--<aop:aspectj-autoproxy/>-->
-
     <!-- Properties 加载 -->
     <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
         <property name="systemPropertiesModeName" value="SYSTEM_PROPERTIES_MODE_OVERRIDE"/>
@@ -39,6 +35,14 @@
         <property name="cookieName" value="_clientlocale"/>
         <property name="defaultLocale" value="zh_CN"/>
         <property name="cookieMaxAge" value="2147483647"/>
+    </bean>
+
+    <!-- 动态代理开启 -->
+    <aop:aspectj-autoproxy/>
+
+    <!-- 支持方法参数级别的校验 -->
+    <bean class="org.springframework.validation.beanvalidation.MethodValidationPostProcessor" >
+        <property name="order" value="-2147483648"/>
     </bean>
 
     <!--<import resource="classpath:spring/spring-printTime.xml" />-->

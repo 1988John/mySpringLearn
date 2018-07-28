@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
  * @author jiangwang3
  * @date 2018/6/1.
  */
-@Component
+//@Component
 public class FreshListener implements ApplicationListener<ContextRefreshedEvent>{
     private final Logger logger = LoggerFactory.getLogger(getClass());
     @Override

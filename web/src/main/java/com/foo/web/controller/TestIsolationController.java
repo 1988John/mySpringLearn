@@ -13,7 +13,7 @@ import javax.annotation.Resource;
  * Created by jiangwang3 on 2018/4/18.
  */
 //@RestController
-@RequestMapping(value = {"/isolation"})
+//@RequestMapping(value = {"/isolation"})
 public class TestIsolationController {
     @Resource
     private IsolationService isolationService;

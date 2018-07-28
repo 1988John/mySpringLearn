@@ -2,10 +2,7 @@ package com.foo.test.base.comparation;
 
 import com.alibaba.fastjson.JSON;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 /**
  * @author jiangwang3
@@ -53,6 +50,8 @@ public class UserComparable implements Comparable<UserComparable>{
         useList.add(use3);
 
         Collections.sort(useList);
+
+        Collections.reverse(useList);
 
         System.out.println(JSON.toJSONString(useList));
     }

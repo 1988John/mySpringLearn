@@ -6,6 +6,7 @@ import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.core.Ordered;
 import org.springframework.stereotype.Component;
 
 import java.util.Date;
@@ -16,7 +17,9 @@ import java.util.Date;
  */
 @Aspect
 @Component
-public class PrintTimeProcessor {
+public class PrintTimeProcessor implements Ordered{
+
+    private int order = LOWEST_PRECEDENCE - 1000; // 指定执行顺序
 
     private Logger LOGGER = LoggerFactory.getLogger(getClass());
 
@@ -37,5 +40,9 @@ public class PrintTimeProcessor {
         System.out.println();
 
         return proceed;
+    }
+    @Override
+    public int getOrder() {
+        return order;
     }
 }

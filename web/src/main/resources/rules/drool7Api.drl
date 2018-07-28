@@ -1,0 +1,25 @@
+package com.rules
+import com.foo.test.drools.Car
+import com.foo.test.drools.Person
+
+rule "test-drool7-older than 60"
+
+when
+    $Car : Car( person.age > 60)
+then
+    $Car.setDiscount(80);
+    System.out.println("test-drool7-older than 60 "+$Car.getPerson().getAge());
+    System.out.println("test-drool7-other"+$Car);
+end
+
+rule "test-drool7-other"
+
+when
+    car : Car( person.age<=60)
+then
+    car.setDiscount(70);
+    System.out.println("test-drool7-other"+car.getPerson().getAge());
+    System.out.println("test-drool7-other"+car);
+end
+
+

@@ -1,0 +1,35 @@
+// created on: Dec 24, 2014
+package com.rules
+
+// list any import classes here.
+import com.foo.test.drools.domain.ItemCity;
+
+import java.math.BigDecimal;
+
+import com.foo.test.drools.utils.HelloCity;
+
+// declare any global variables here
+dialect "java"
+rule "Nagpur Medicine Item"
+
+   when
+      item : ItemCity(purchaseCity == ItemCity.City.NAGPUR,
+                      typeofItem == ItemCity.Type.MEDICINES)
+
+   then
+      BigDecimal tax = new BigDecimal(0.0);
+      item.setLocalTax(tax.multiply(item.getSellPrice()));
+
+      HelloCity.writeHello(item.getPurchaseCity().toString());
+end
+
+rule "Nagpur Groceries Item"
+
+   when
+      item : ItemCity(purchaseCity == ItemCity.City.NAGPUR,
+                      typeofItem == ItemCity.Type.GROCERIES)
+
+   then
+      BigDecimal tax = new BigDecimal(1.0);
+      item.setLocalTax(tax.multiply(item.getSellPrice()));
+end

@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 import java.util.Date;
 
 @Aspect
-@Component
+//@Component
 public class TimeHandlerAspect {
 
     private Logger logger = LoggerFactory.getLogger(getClass());

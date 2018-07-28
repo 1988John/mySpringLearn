@@ -1,0 +1,21 @@
+// created on: Dec 24, 2014
+package com.rules
+
+// list any import classes here.
+import com.foo.domain.user.Product
+// declare any global variables here
+
+dialect "java"
+rule "Offer for Diamond"
+	when
+		productObject: Product(type=="diamond")
+	then
+		productObject.setDiscount(15);
+	end
+rule "Offer for Gold"
+    salience 100
+	when
+		productObject: Product(type=="gold")
+	then
+		productObject.setDiscount(235);
+	end
