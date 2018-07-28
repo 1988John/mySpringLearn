@@ -40,7 +40,6 @@
 
     <!-- 公共配置引入 -->
     <import resource="classpath:spring/spring-config-dao.xml" />
-    <import resource="drools.xml"/>
     <!--<import resource="aop.xml"/>-->
     <!--<import resource="classpath:spring/spring-printTime.xml" />-->
 

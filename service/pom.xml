@@ -40,12 +40,6 @@
             <artifactId>aspectjweaver</artifactId>
         </dependency>
 
-        <!-- drools -->
-        <dependency>
-            <groupId>org.drools</groupId>
-            <artifactId>drools-spring</artifactId>
-        </dependency>
-
     </dependencies>
 
     <build>
