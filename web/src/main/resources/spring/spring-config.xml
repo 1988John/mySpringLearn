@@ -13,7 +13,8 @@
     <context:annotation-config />
 
     <!-- 动态代理开启 -->
-    <aop:aspectj-autoproxy proxy-target-class="true" />
+    <!--<aop:aspectj-autoproxy proxy-target-class="true" />-->
+    <aop:aspectj-autoproxy/>
 
     <!-- Properties 加载 -->
     <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertiesFactoryBean">

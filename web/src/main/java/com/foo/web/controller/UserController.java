@@ -1,7 +1,9 @@
 package com.foo.web.controller;
 
 import com.foo.domain.user.User;
+import com.foo.service.annotation.Authority;
 import com.foo.service.annotation.PrintTime;
+import com.foo.service.user.OrderService;
 import com.foo.service.user.UserService;
 import org.hibernate.validator.constraints.NotBlank;
 import org.slf4j.Logger;
@@ -23,6 +25,9 @@ import javax.annotation.Resource;
 public class UserController {
 
     private Logger logger = LoggerFactory.getLogger(getClass());
+
+    @Resource
+    private OrderService orderService;
 
 //    @Resource
 //    private UserService userService;
@@ -58,6 +63,7 @@ public class UserController {
 
     @RequestMapping(value = "/showUser", method={RequestMethod.GET})
     public String showUser(User user){
+        orderService.getOrder();
         return user.toString();
     }
 
