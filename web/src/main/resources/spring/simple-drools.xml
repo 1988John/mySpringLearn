@@ -18,7 +18,13 @@
 
     <bean id="simpleService" class="com.foo.service.drools.SimpleService">
         <property name="productSession" ref="productSession" />
+        <property name="workingMemoryListener" ref="workingMemoryListener" />
+        <property name="agendaEventListener" ref="agendaEventListener"/>
     </bean>
+
+    <bean id="workingMemoryListener" class="com.foo.service.drools.listener.MyWorkingMemoryEventListener"/>
+
+    <bean id="agendaEventListener" class="com.foo.service.drools.listener.MyAgendaEventListener"/>
 
 
 
