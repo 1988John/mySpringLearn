@@ -269,37 +269,6 @@
                 <version>4.2.0.Final</version>
             </dependency>
 
-
-
-            <dependency>
-                <groupId>org.drools</groupId>
-                <artifactId>drools-spring</artifactId>
-                <version>5.6.0.FINAL</version>
-            </dependency>
-
-            <!-- drools -->
-            <!--<dependency>-->
-                <!--<groupId>org.drools</groupId>-->
-                <!--<artifactId>drools-core</artifactId>-->
-                <!--<version>${drools.version}</version>-->
-            <!--</dependency>-->
-            <!--<dependency>-->
-                <!--<groupId>org.drools</groupId>-->
-                <!--<artifactId>drools-compiler</artifactId>-->
-                <!--<version>${drools.version}</version>-->
-            <!--</dependency>-->
-            <!--<dependency>-->
-                <!--<groupId>org.drools</groupId>-->
-                <!--<artifactId>drools-templates</artifactId>-->
-                <!--<version>${drools.version}</version>-->
-            <!--</dependency>-->
-            <!--<dependency>-->
-                <!--<groupId>org.kie</groupId>-->
-                <!--<artifactId>kie-spring</artifactId>-->
-                <!--<version>${drools.version}</version>-->
-            <!--</dependency>-->
-
-
         </dependencies>
     </dependencyManagement>
 
@@ -312,6 +281,20 @@
                 <configuration>
                     <source>1.8</source>
                     <target>1.8</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>2.6</version>
+                <configuration>
+                    <webResources>
+                        <resource>
+                            <directory>src/main/webapp</directory>
+                            <filtering>true</filtering>
+                        </resource>
+                    </webResources>
+                    <warName>${project.artifactId}</warName>
                 </configuration>
             </plugin>
         </plugins>
