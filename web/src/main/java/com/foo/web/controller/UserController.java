@@ -3,6 +3,7 @@ package com.foo.web.controller;
 import com.foo.domain.user.User;
 import com.foo.service.annotation.Authority;
 import com.foo.service.annotation.PrintTime;
+import com.foo.service.transaction.TxUserService;
 import com.foo.service.user.OrderService;
 import com.foo.service.user.UserService;
 import org.hibernate.validator.constraints.NotBlank;
@@ -28,6 +29,15 @@ public class UserController {
 
     @Resource
     private OrderService orderService;
+
+    @Resource
+    private TxUserService txUserService;
+
+    @RequestMapping(value = "/tx", method={RequestMethod.GET})
+    public  String tx(String name){
+        txUserService.insert(name);
+        return name;
+    }
 
 //    @Resource
 //    private UserService userService;
