@@ -1,10 +1,8 @@
 package com.foo.web.controller;
 
 import com.foo.domain.user.User;
-import com.foo.service.annotation.Authority;
 import com.foo.service.annotation.PrintTime;
 import com.foo.service.user.OrderService;
-import com.foo.service.user.UserService;
 import org.hibernate.validator.constraints.NotBlank;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -32,22 +30,9 @@ public class UserController {
     @RequestMapping(value = "/controllerAspect", method={RequestMethod.GET})
     @PrintTime
     public  String name(@NotBlank(message = "name null") String name){
-//        publisher.pushListener("我来了！");
         logger.info("Controller层----测试切面");
         return "controllerAspect";
     }
-
-    /**
-     * 此处之前返回Integer 报错。原因：将对象转为json，spring默认使用jackson。
-     * 解决方法：添加jackson包即可
-     * @author jiangwang
-     * 21:52 2018/4/23
-     */
-//    @RequestMapping(value = "/getCount", method={RequestMethod.GET})
-//    public  Integer getLeastLeasePrice(){
-//
-//        return userService.selectCount();
-//    }
 
     @RequestMapping(value = "/showUser", method={RequestMethod.GET})
     public String showUser(User user){
