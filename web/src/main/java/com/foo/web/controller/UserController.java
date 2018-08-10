@@ -29,18 +29,6 @@ public class UserController {
     @Resource
     private OrderService orderService;
 
-//    @Resource
-//    private UserService userService;
-
-//    @Autowired
-//    private MyTestEventPubLisher publisher;
-
-//    @RequestMapping(value = "/serviceAspect", method={RequestMethod.GET})
-//    public  String serviceAspect(){
-//
-//        return userService.serviceAspect();
-//    }
-
     @RequestMapping(value = "/controllerAspect", method={RequestMethod.GET})
     @PrintTime
     public  String name(@NotBlank(message = "name null") String name){
