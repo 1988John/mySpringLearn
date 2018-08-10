@@ -5,6 +5,8 @@ import org.drools.event.rule.AgendaEventListener;
 import org.drools.event.rule.WorkingMemoryEventListener;
 import org.drools.runtime.StatelessKnowledgeSession;
 
+import java.util.List;
+
 public class SimpleService {
 
 	private StatelessKnowledgeSession productSession;
@@ -18,6 +20,12 @@ public class SimpleService {
 		productSession.addEventListener(agendaEventListener);
 		productSession.execute(product);
 	}
+
+    public void CalculateDiscount(List<?> list) {
+        productSession.addEventListener(workingMemoryListener);
+        productSession.addEventListener(agendaEventListener);
+        productSession.execute(list);
+    }
 
 	public void setProductSession(StatelessKnowledgeSession productSession) {
 		this.productSession = productSession;
