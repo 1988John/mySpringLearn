@@ -14,7 +14,12 @@
 
     <context:annotation-config />
 
-    <task:annotation-driven />
+
+    <task:executor id="myexecutor" pool-size="5"  />
+
+    <task:annotation-driven executor="myexecutor"/>
+
+    <!--<task:annotation-driven/>-->
 
     <!-- 动态代理开启 -->
     <aop:aspectj-autoproxy proxy-target-class="true" />

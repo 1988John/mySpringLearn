@@ -18,7 +18,7 @@ public class MyEventPublisher {
     private ApplicationContext applicationContext;
 
     // 事件发布方法
-    @Transactional
+//    @Transactional
     public void pushListener(String msg) {
         logger.error("发布事件，开始：{}", new Date());
         applicationContext.publishEvent(new MyEvent(this, msg));

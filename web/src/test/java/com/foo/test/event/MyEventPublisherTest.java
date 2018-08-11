@@ -19,7 +19,7 @@ public class MyEventPublisherTest extends BaseTest{
 
     @Test
     public void listenerTest(){
-        myEventPublisher.pushListener("ab22223");
+        myEventPublisher.pushListener("hsdfasdfads24");
     }
 
 }

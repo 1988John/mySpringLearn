@@ -5,6 +5,7 @@ import com.foo.service.transaction.TxUserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationListener;
+import org.springframework.context.event.EventListener;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Component;
 
@@ -13,24 +14,19 @@ import java.util.Date;
 
 
 @Component
-public class MyListener implements ApplicationListener<MyEvent>{
+public class Notifier {
 
     private final Logger logger = LoggerFactory.getLogger(getClass());
 
     @Resource
     private TxUserService txUserService;
 
-    @Override
     @Async
+//    @EventListener
     public void onApplicationEvent(MyEvent event) {
-        logger.error("监听事件，开始：{}", new Date());
+        logger.error("EventListener注解，监听事件，开始：{}", new Date());
         txUserService.insert(event.getName());
-        try {
-            Thread.sleep(4000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        logger.error("监听事件，结束：{}", new Date());
+        logger.error("EventListener注解，监听事件，结束：{}", new Date());
     }
 
 }
