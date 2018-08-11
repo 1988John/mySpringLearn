@@ -23,7 +23,7 @@ public class TxUserServiceImpl implements TxUserService{
     @Resource
     private UserDao userDao;
 
-//    @Transactional
+    @Transactional
     public void insert(String name){
         User user = new User();
         user.setName(name);
