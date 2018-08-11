@@ -38,8 +38,8 @@
     </bean>
 
     <!-- 动态代理开启 -->
-    <!--<aop:aspectj-autoproxy proxy-target-class="true"/>-->
-    <aop:aspectj-autoproxy/>
+    <aop:aspectj-autoproxy proxy-target-class="true"/>
+    <!--<aop:aspectj-autoproxy/>-->
 
     <!-- 支持方法参数级别的校验 -->
     <bean class="org.springframework.validation.beanvalidation.MethodValidationPostProcessor" >
