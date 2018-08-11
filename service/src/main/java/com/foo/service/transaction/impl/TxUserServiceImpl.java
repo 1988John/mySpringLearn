@@ -25,6 +25,6 @@ public class TxUserServiceImpl implements TxUserService{
 
         userDao.insertEntry(user);
 
-        throw new RuntimeException();
+//        throw new RuntimeException();
     }
 }

@@ -8,18 +8,18 @@ public class MyEvent extends ApplicationEvent{
      */
     private static final long serialVersionUID = 1L;
 
-    private String msg ;
+    private String name ;
 
-    public MyEvent(Object source, String msg) {
+    MyEvent(Object source, String name) {
         super(source);
-        this.msg = msg;
+        this.name = name;
     }
 
-    public String getMsg() {
-        return msg;
+    public String getName() {
+        return name;
     }
 
-    public void setMsg(String msg) {
-        this.msg = msg;
+    public void setName(String name) {
+        this.name = name;
     }
 }
