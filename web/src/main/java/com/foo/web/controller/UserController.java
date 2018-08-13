@@ -3,6 +3,7 @@ package com.foo.web.controller;
 import com.foo.domain.user.User;
 import com.foo.service.annotation.Authority;
 import com.foo.service.annotation.PrintTime;
+import com.foo.service.listener.MyEventPublisher;
 import com.foo.service.transaction.TxUserService;
 import com.foo.service.user.OrderService;
 import com.foo.service.user.UserService;
@@ -31,7 +32,16 @@ public class UserController {
     private OrderService orderService;
 
     @Resource
+    private MyEventPublisher myEventPublisher;
+
+    @Resource
     private TxUserService txUserService;
+
+    @RequestMapping(value = "/event", method={RequestMethod.GET})
+    public  String event(String name){
+        myEventPublisher.pushListener(name);
+        return name;
+    }
 
     @RequestMapping(value = "/tx", method={RequestMethod.GET})
     public  String tx(String name){

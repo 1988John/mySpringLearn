@@ -14,12 +14,7 @@
 
     <context:annotation-config />
 
-
-    <task:executor id="myexecutor" pool-size="5"  />
-
-    <task:annotation-driven executor="myexecutor"/>
-
-    <!--<task:annotation-driven/>-->
+    <task:executor id="myexecutor" pool-size="5"/>
 
     <!-- 动态代理开启 -->
     <aop:aspectj-autoproxy proxy-target-class="true" />
@@ -48,8 +43,11 @@
         <context:exclude-filter type="annotation" expression="org.springframework.web.bind.annotation.ControllerAdvice"/>
     </context:component-scan>
 
+    <task:annotation-driven executor="myexecutor"/>
+
     <!-- 公共配置引入 -->
     <import resource="classpath:spring/spring-config-dao.xml" />
+
     <!--<import resource="aop.xml"/>-->
     <!--<import resource="classpath:spring/spring-printTime.xml" />-->
 

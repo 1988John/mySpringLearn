@@ -22,7 +22,7 @@ public class Notifier {
     private TxUserService txUserService;
 
     @Async
-//    @EventListener
+    @EventListener
     public void onApplicationEvent(MyEvent event) {
         logger.error("EventListener注解，监听事件，开始：{}", new Date());
         txUserService.insert(event.getName());

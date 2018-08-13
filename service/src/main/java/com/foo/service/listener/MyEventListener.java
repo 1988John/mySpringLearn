@@ -13,7 +13,7 @@ import javax.annotation.Resource;
 import java.util.Date;
 
 
-@Component
+//@Component
 public class MyEventListener implements ApplicationListener<MyEvent> {
 
     private final Logger logger = LoggerFactory.getLogger(getClass());
@@ -23,7 +23,7 @@ public class MyEventListener implements ApplicationListener<MyEvent> {
 
 
     @Override
-    @Async
+//    @Async
     public void onApplicationEvent(MyEvent event) {
         logger.error("实现ApplicationListener接口，监听事件，开始：{}", new Date());
         txUserService.insert(event.getName());
