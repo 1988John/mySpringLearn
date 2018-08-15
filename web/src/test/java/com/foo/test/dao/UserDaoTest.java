@@ -2,6 +2,7 @@ package com.foo.test.dao;
 
 import com.foo.dao.user.UserDao;
 import com.foo.domain.user.User;
+import com.foo.test.BaseTest;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
@@ -15,9 +16,7 @@ import javax.annotation.Resource;
  * Description:
  * Created by jiangwang3 on 2018/4/23.
  */
-@RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = {"classpath:/spring/spring-config.xml"})
-public class UserDaoTest {
+public class UserDaoTest extends BaseTest{
     private Logger logger = LoggerFactory.getLogger(getClass());
     @Resource
     private UserDao userDao;
