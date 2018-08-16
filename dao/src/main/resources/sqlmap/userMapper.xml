@@ -27,7 +27,7 @@
 	</sql>
 
 	<!-- 插入deal记录 -->
-	<insert id="insertEntry" parameterType="user" >
+	<insert id="insertEntry" parameterType="com.foo.domain.user.User" >
 		<![CDATA[
 			INSERT  INTO ]]>
         <include refid="QUERY_TABLE"/>
@@ -39,7 +39,7 @@
 	</insert>
 
 	<!-- 通过条件查询数据集合 -->
-	<select id="selectEntryByName" parameterType="user" resultType="user">
+	<select id="selectEntryByName" parameterType="com.foo.domain.user.User" resultType="com.foo.domain.user.User">
 		<![CDATA[SELECT]]>
 		<include refid="QUERY_COLUMN_LIST"/>
 		<include refid="QUERY_FROM_TABLE"/>
