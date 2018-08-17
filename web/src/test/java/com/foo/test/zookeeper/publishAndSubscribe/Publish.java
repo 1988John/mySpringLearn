@@ -13,11 +13,13 @@ import java.util.concurrent.CountDownLatch;
 public class Publish implements Watcher{
     private static CountDownLatch latch =  new CountDownLatch(1);
     private final static Integer  SESSION_TIMEOUT = 5000;
+    private static final String CONNECT_STRING = "127.0.0.1:2181";
+    private static final String PATH = "/path1";
 
     public static void main(String[] args) {
         try {
-            String path  ="/jiangwang";
-            ZooKeeper zk =  new ZooKeeper("127.0.0.1:2181",SESSION_TIMEOUT,new Publish());
+            String path  =PATH;
+            ZooKeeper zk =  new ZooKeeper(CONNECT_STRING,SESSION_TIMEOUT,new Publish());
             latch.await();
             System.out.println("zk connection");
             Stat stat = zk.exists(path, new Publish());

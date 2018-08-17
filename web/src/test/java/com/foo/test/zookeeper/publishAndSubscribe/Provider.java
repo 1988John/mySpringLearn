@@ -11,6 +11,11 @@ import java.util.concurrent.CountDownLatch;
 
 public class Provider {
 
+    private static final String PATH = "/path1";
+    private static final String CONTENT = "contentfdsfsad1111";
+    private static final String CONNECT_STRING = "127.0.0.1:2181";
+    private static final int SESSION_TIMEOUT = 5000;
+
     public static void main(String[] args) throws Exception {
         Watcher watcher = new Watcher() {
             @Override  
@@ -19,16 +24,15 @@ public class Provider {
             }  
         };  
           
-        ZooKeeper zk = new ZooKeeper("127.0.0.1:2181", 5000, watcher);
-        Stat stat = zk.exists("/message", watcher);
+        ZooKeeper zk = new ZooKeeper(CONNECT_STRING, SESSION_TIMEOUT, watcher);
+        Stat stat = zk.exists(PATH, watcher);
         if (stat == null) {             //假如节点不存在，则先创建节点  
-            zk.create("/message", "hello".getBytes(), Ids.OPEN_ACL_UNSAFE, CreateMode.PERSISTENT);
-        }  
+            zk.create(PATH, CONTENT.getBytes(), Ids.OPEN_ACL_UNSAFE, CreateMode.PERSISTENT);
+        }else {
+            //向该节点发送消息
+            zk.setData(PATH, CONTENT.getBytes(), -1);
+        }
           
-        //向该节点发送消息  
-        zk.setData("/message", "hello world".getBytes(), -1);  
-          
-          
-        zk.close();  
+        zk.close();
     }  
 }  

@@ -9,13 +9,17 @@ import org.apache.zookeeper.ZooKeeper;
 public class Consumer implements Watcher{  
     ZooKeeper zk;  
     String hostPort;  
-    String znode;  
+    String znode;
+
+    private static final String PATH = "/path1";
+    private static final String CONNECT_STRING = "127.0.0.1:2181";
+    private static final int SESSION_TIMEOUT = 5000;
       
     public Consumer(String hostPort,String znode) throws Exception{  
         this.hostPort = hostPort;  
         this.znode = znode;  
           
-        zk = new ZooKeeper(hostPort, 3000, this);  
+        zk = new ZooKeeper(hostPort, SESSION_TIMEOUT, this);
         //第一次获取节点消息，同时添加watcher  
         System.out.println("消息内容：" + new String(zk.getData(znode, true, null)));  
     }  
@@ -25,7 +29,7 @@ public class Consumer implements Watcher{
         if (event.getType() == EventType.NodeDataChanged) {  
             try {  
                 //当节点消息变化时，触发该操作：获取变化后的消息，同时再添加watcher  
-                System.out.println("你有新的消息:" + new String(zk.getData("/message", true, null)));  
+                System.out.println("你有新的消息:" + new String(zk.getData(PATH, true, null)));
                   
             } catch (KeeperException e) {  
                 // TODO Auto-generated catch block  
@@ -38,7 +42,7 @@ public class Consumer implements Watcher{
     }  
       
     public static void main(String[] args) throws Exception {  
-        new Consumer("127.0.0.1:2181","/message");
+        new Consumer(CONNECT_STRING,PATH);
   
         System.in.read();  
     }  
