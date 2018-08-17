@@ -31,7 +31,6 @@ public class MybatisMapperTest {
         } finally {
             session.close();
         }
-
     }
 }
 
