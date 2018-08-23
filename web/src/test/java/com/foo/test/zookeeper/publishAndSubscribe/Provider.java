@@ -25,6 +25,12 @@ public class Provider {
         };  
           
         ZooKeeper zk = new ZooKeeper(CONNECT_STRING, SESSION_TIMEOUT, watcher);
+
+
+        //为某一个节点设置监听
+
+
+
         Stat stat = zk.exists(PATH, watcher);
         if (stat == null) {             //假如节点不存在，则先创建节点  
             zk.create(PATH, CONTENT.getBytes(), Ids.OPEN_ACL_UNSAFE, CreateMode.PERSISTENT);
