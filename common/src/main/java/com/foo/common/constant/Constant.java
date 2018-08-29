@@ -8,4 +8,5 @@ public interface Constant {
     String IN_PATH = "C:\\Users\\jiangwang3\\Desktop\\in.txt";
     String IN_SKIP_PATH = "C:\\Users\\jiangwang3\\Desktop\\in_skip.txt";
     String OUT_PATH = "C:\\Users\\jiangwang3\\Desktop\\out.txt";
+    String NIO_PATH = "C:\\Users\\jiangwang3\\Desktop\\nio_data.txt";
 }
