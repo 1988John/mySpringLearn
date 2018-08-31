@@ -10,4 +10,5 @@ public interface UserDao {
     int insertEntry(User user);
     User selectEntryByName(User user);
     int selectCount();
+    int updateById(User user);
 }

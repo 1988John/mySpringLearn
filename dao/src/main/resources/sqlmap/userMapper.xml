@@ -52,4 +52,12 @@
 		<include refid="QUERY_FROM_TABLE"/>
 	</select>
 
+	<update id="updateById" parameterType="user">
+		<![CDATA[UPDATE]]>
+		<include refid="QUERY_TABLE"/>
+		SET name=#{name}
+		<![CDATA[WHERE id = #{id}]]>
+	</update>
+
+
 </mapper>

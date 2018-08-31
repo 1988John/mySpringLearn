@@ -39,6 +39,11 @@ public class UserController {
         return name;
     }
 
+    @RequestMapping(value = "/update", method={RequestMethod.GET})
+    public  int update(User user){
+        return txUserService.update(user);
+    }
+
 //    @Resource
 //    private UserService userService;
 

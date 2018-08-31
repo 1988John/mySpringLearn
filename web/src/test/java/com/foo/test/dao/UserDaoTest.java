@@ -35,5 +35,14 @@ public class UserDaoTest {
         int i = userDao.insertEntry(user);
         logger.error("结果：{}",i);
     }
+
+    @Test
+    public void updateByIdTest(){
+        User user = new User();
+        user.setId(1);
+        user.setName("adfadsfsdf");
+        int i = userDao.updateById(user);
+        logger.error("结果：{}",i);
+    }
 }
 

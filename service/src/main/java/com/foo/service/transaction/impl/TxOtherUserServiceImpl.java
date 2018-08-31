@@ -14,13 +14,10 @@ import javax.annotation.Resource;
  * @date 2018/8/10.
  */
 @Service
-public class TxUserServiceImpl implements TxUserService{
+public class TxOtherUserServiceImpl implements TxOtherUserService {
 
     @Resource
     private UserDao userDao;
-
-    @Resource
-    private TxOtherUserService txOtherUserService;
 
     @Transactional
     public void insert(String name){
@@ -29,15 +26,11 @@ public class TxUserServiceImpl implements TxUserService{
 
         userDao.insertEntry(user);
 
-        txOtherUserService.insert(name);
-
-//        throw new RuntimeException();
     }
 
     @Override
     @Transactional
     public int update(User user) {
-        userDao.updateById(user);
-        return txOtherUserService.update(user);
+        return userDao.updateById(user);
     }
 }
