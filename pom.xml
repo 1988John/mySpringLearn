@@ -256,11 +256,10 @@
                 <version>4.2.0.Final</version>
             </dependency>
 
-            <!-- lucene from master-->
             <dependency>
-                <groupId>org.apache.lucene</groupId>
-                <artifactId>lucene-core</artifactId>
-                <version>7.6.0</version>
+                <groupId>com.lmax</groupId>
+                <artifactId>disruptor</artifactId>
+                <version>3.4.2</version>
             </dependency>
 
         </dependencies>
