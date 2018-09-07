@@ -1,4 +1,4 @@
-package com.foo.test.producerAndCousumer.listImlement;
+package com.foo.test.producerAndConsumer.listImlement;
 
 import java.util.LinkedList;
 
