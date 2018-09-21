@@ -9,9 +9,11 @@ import org.slf4j.LoggerFactory;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * @author jiangwang
@@ -24,8 +26,32 @@ public class UserController {
 
     private Logger logger = LoggerFactory.getLogger(getClass());
 
-    @Resource
-    private OrderService orderService;
+    @Resource private OrderService orderService;
+
+    @RequestMapping(value = "/value", method={RequestMethod.GET})
+    public  String value(String myValue){
+        return myValue;
+    }
+
+    @RequestMapping(value = "/domain", method={RequestMethod.GET})
+    public  String domain(User user){
+        return user.toString();
+    }
+
+    @RequestMapping(value = "/list0", method={RequestMethod.GET})
+    public  String list0(List<Long> contentIds){
+        return contentIds.toString();
+    }
+
+    @RequestMapping(value = "/list1", method={RequestMethod.GET})
+    public  String list1(@RequestParam(value = "contentIds") List<Long> contentIds){
+        return contentIds.toString();
+    }
+
+    @RequestMapping(value = "/list", method={RequestMethod.GET})
+    public  String list(@RequestParam(value = "contentIds[]") List<Long> contentIds){
+        return contentIds.toString();
+    }
 
     @RequestMapping(value = "/controllerAspect", method={RequestMethod.GET})
     @PrintTime
