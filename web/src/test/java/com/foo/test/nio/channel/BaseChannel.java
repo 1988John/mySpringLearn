@@ -1,9 +1,8 @@
-package com.foo.test.base.nio.channel;
+package com.foo.test.nio.channel;
 
 import com.foo.common.constant.Constant;
 import org.junit.Test;
 
-import java.io.FileNotFoundException;
 import java.io.RandomAccessFile;
 import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;

@@ -1,4 +1,4 @@
-//package com.foo.test.base.nio.selector;
+//package com.foo.test.nio.selector;
 //
 //import org.junit.Test;
 //
