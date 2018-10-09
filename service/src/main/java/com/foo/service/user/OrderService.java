@@ -9,4 +9,6 @@ import org.springframework.stereotype.Service;
 public interface OrderService {
     String getOrder();
 
+    boolean operate(String name);
+
 }

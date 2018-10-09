@@ -9,7 +9,7 @@ package com.foo.test.aop.jdkDynamic;
 public class UserServiceImpl implements UserService {  
   
     /* (non-Javadoc) 
-     * @see dynamic.proxy.UserService#add() 
+     * @see dynamic.proxy.UserServiceImpl#add()
      */  
     public void add() {  
         System.out.println("--------------------add---------------");  

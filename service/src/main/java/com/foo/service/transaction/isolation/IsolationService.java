@@ -33,7 +33,7 @@ public class IsolationService {
      */
     @Transactional
     public User defaultLevel(String name){
-        return userService.selectUserByName(name);
+        return userService.queryByName(name);
     }
 
     /**
@@ -42,7 +42,7 @@ public class IsolationService {
      */
     @Transactional(isolation = Isolation.READ_UNCOMMITTED)
     public User readUncommitted(String name){
-        return userService.selectUserByName(name);
+        return userService.queryByName(name);
     }
 
     /**
@@ -94,7 +94,7 @@ public class IsolationService {
      * 16:02 2018/4/18
      */
     private User read(String name, Long second){
-        User user1 = userService.selectUserByName(name);
+        User user1 = userService.queryByName(name);
         SqlSessionUtils.getSqlSession(sqlTemplate.getSqlSessionFactory()).clearCache();
         logger.error("第一次读取：{}",JSON.toJSONString(user1));
         try {
@@ -102,23 +102,24 @@ public class IsolationService {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        User user2 = userService.selectUserByName(name);
+        User user2 = userService.queryByName(name);
         logger.error("第二次读取：{}",JSON.toJSONString(user2));
         return user2;
     }
 
     private int phantomRead(Long second){
-        int count1 = userService.selectCount();
-        SqlSessionUtils.getSqlSession(sqlTemplate.getSqlSessionFactory()).clearCache();
-        logger.error("第一次读取,总条数：{}",JSON.toJSONString(count1));
-        try {
-            Thread.sleep(1000*second);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        int count2 = userService.selectCount();
-        logger.error("第二次读取，总条数：{}",JSON.toJSONString(count2));
-        return count2;
+//        int count1 = userService.selectCount();
+//        SqlSessionUtils.getSqlSession(sqlTemplate.getSqlSessionFactory()).clearCache();
+//        logger.error("第一次读取,总条数：{}",JSON.toJSONString(count1));
+//        try {
+//            Thread.sleep(1000*second);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
+//        int count2 = userService.selectCount();
+//        logger.error("第二次读取，总条数：{}",JSON.toJSONString(count2));
+//        return count2;
+        return 0;
     }
 
 

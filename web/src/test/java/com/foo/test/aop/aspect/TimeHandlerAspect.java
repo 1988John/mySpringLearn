@@ -17,6 +17,6 @@ public class TimeHandlerAspect extends BaseTest{
 
     @Test
     public void testProxy() throws Throwable {
-        userService.addUser();
+//        userService.addUser();
     }
 }

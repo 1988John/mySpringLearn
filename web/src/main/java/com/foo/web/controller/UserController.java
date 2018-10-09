@@ -45,7 +45,7 @@ public class UserController {
     }
 
 //    @Resource
-//    private UserService userService;
+//    private UserServiceImpl userService;
 
 //    @Autowired
 //    private MyTestEventPubLisher publisher;
