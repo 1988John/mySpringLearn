@@ -8,6 +8,7 @@ import com.foo.service.user.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 
@@ -29,8 +30,11 @@ public class OrderServiceImpl implements OrderService{
     }
 
     @Override
+    @Transactional
     public boolean operate(String name) {
         userService.insert(name);
+
+//        throw new RuntimeException();
 
         User user = userService.queryByName(name);
         logger.error("搜索结果==》{}",JSON.toJSONString(user));

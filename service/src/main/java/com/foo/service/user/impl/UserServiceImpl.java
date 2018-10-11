@@ -7,6 +7,8 @@ import com.foo.service.user.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 
@@ -28,6 +30,7 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
+    @Transactional(propagation = Propagation.REQUIRES_NEW)
     public User queryByName(String name){
         User user = new User();
         user.setName(name);

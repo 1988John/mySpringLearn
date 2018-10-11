@@ -22,7 +22,7 @@ public class OrderServiceTest extends BaseTest{
 
     @Test
     public void operate() throws Exception {
-        String name = "foo12345";
+        String name = "foo1234511";
         orderService.operate(name);
     }
 
