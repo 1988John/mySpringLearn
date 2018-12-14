@@ -1,33 +1,26 @@
 package com.foo.test.thread.executor;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
-import java.util.concurrent.*;
-
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+/**
+ * 演示线程池基本操作
+ * @author Fooisart
+ * Created on 2018-12-11
+ */
 public class ExecutorServiceDemo {
-
-    public static void main(String[] args) throws InterruptedException {
-
-        Random random = new Random();
-        List<Future<Integer>> results = new ArrayList<Future<Integer>>();
-
+    public static void main(String[] args) {
+        //1，线程池创建
         ExecutorService executor = Executors.newFixedThreadPool(2);
-        ScheduledExecutorService scheduledExecutorService = Executors.newScheduledThreadPool(4);
-        for (int i = 0; i < 30; i ++){
-            MyTask thisTask = new MyTask(i);
-            results.add(executor.submit(thisTask));
-        }
-        executor.shutdown();
-
-        System.out.println("Successfully distribute all the tasks!");
-        System.out.println("Waiting for the results!");
-        for (Future<Integer> result: results){
-            try {
-                System.out.println("Result: " + result.get(random.nextInt(500) , TimeUnit.MILLISECONDS));
-            } catch (Exception e) {
-                System.out.println("Result Timeout, drop result of this task");
+        //2，新建任务
+        Runnable task = new Runnable() {
+            @Override
+            public void run() {
+                System.out.println("The real task is executing!");
             }
-        }
+        };
+        //3，提交任务到线程池
+        executor.submit(task);
+        //4，线程池关闭
+        executor.shutdown();
     }
 }
