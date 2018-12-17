@@ -256,6 +256,12 @@
                 <version>4.2.0.Final</version>
             </dependency>
 
+            <dependency>
+                <groupId>org.apache.lucene</groupId>
+                <artifactId>lucene-core</artifactId>
+                <version>1.9.1</version>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 
