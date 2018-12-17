@@ -257,7 +257,6 @@
             </dependency>
 
             <!-- i am in the lucene -->
-            <!-- lucene aa -->
             <dependency>
                 <groupId>org.apache.lucene</groupId>
                 <artifactId>lucene-core</artifactId>
