@@ -1,4 +1,4 @@
-package com.foo.test.netty;
+package com.foo.test.echo;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
