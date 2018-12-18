@@ -23,7 +23,10 @@ public class NettyClient {
             b.handler(new ChannelInitializer<SocketChannel>() {
                 @Override
                 public void initChannel(SocketChannel ch) throws Exception {
-                    ch.pipeline().addLast(new RequestDataEncoder(), new ResponseDataDecoder(), new ClientHandler());
+                    ch.pipeline().addLast(
+                            new RequestDataEncoder(),
+                            new ResponseDataDecoder(),
+                            new ClientHandler());
                 }
             });
 

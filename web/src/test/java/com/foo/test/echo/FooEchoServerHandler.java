@@ -9,7 +9,7 @@ import io.netty.channel.ChannelInboundHandlerAdapter;
 import io.netty.util.CharsetUtil;
 
 @Sharable
-public class EchoServerHandler extends ChannelInboundHandlerAdapter{
+public class FooEchoServerHandler extends ChannelInboundHandlerAdapter{
     @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
         //将客户端传入的消息转换为Netty的ByteBuf类型
@@ -17,9 +17,8 @@ public class EchoServerHandler extends ChannelInboundHandlerAdapter{
  
         // 在控制台打印传入的消息
         System.out.println(
-                "Server received: " + in.toString(CharsetUtil.UTF_8)
+                "Foo-Server received: " + in.toString(CharsetUtil.UTF_8)
         );
-//        ctx.fireChannelRead(msg);
         //将接收到的消息写给发送者，而不冲刷出站消息
         ctx.write(in);
     }
