@@ -24,6 +24,7 @@ public class EchoServer {
         EventLoopGroup workerGroup = new NioEventLoopGroup();
         // 创建EventLoopGroup
         ServerBootstrap b = new ServerBootstrap();
+
         b.group(bossGroup, workerGroup)
                 //指定所使用的NIO传输Channel
         .channel(NioServerSocketChannel.class)
