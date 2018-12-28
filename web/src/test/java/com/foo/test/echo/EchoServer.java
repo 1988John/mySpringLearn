@@ -1,15 +1,14 @@
 package com.foo.test.echo;
 
+import java.net.InetSocketAddress;
+
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
-import io.netty.channel.ChannelFutureListener;
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.EventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
-
-import java.net.InetSocketAddress;
  
 public class EchoServer {
     private final static int port = 8080;
@@ -38,33 +37,33 @@ public class EchoServer {
             protected void initChannel(SocketChannel socketChannel) throws Exception {
                 //EchoServerHandler被标注为@shareable,所以我们可以总是使用同样的案例
                 socketChannel.pipeline()
-                        .addLast(serverHandler)
-                        .addLast(fooEchoServerHandler);
+                        .addLast(serverHandler);
+//                        .addLast(fooEchoServerHandler);
             }
         });
  
         try {
             // 异步地绑定服务器;调用sync方法阻塞等待直到绑定完成
             ChannelFuture cf = b.bind().sync();
-            cf.addListener(new ChannelFutureListener() {    //3
-                @Override
-                public void operationComplete(ChannelFuture future) {
-                    if (future.isSuccess()) {                //4
-                        System.out.println("Write successful");
-                    } else {
-                        System.err.println("Write error");    //5
-                        future.cause().printStackTrace();
-                    }
-                }
-            });
+//            cf.addListener(new ChannelFutureListener() {    //3
+//                @Override
+//                public void operationComplete(ChannelFuture future) {
+//                    if (future.isSuccess()) {                //4
+//                        System.out.println("Write successful");
+//                    } else {
+//                        System.err.println("Write error");    //5
+//                        future.cause().printStackTrace();
+//                    }
+//                }
+//            });
             // 获取Channel的CloseFuture，并且阻塞当前线程直到它完成
-            cf.channel().closeFuture().sync();
+//            cf.channel().closeFuture().sync();
         } catch (InterruptedException e) {
             e.printStackTrace();
         } finally {
             // 优雅的关闭EventLoopGroup，释放所有的资源
-            bossGroup.shutdownGracefully();
-            workerGroup.shutdownGracefully();
+//            bossGroup.shutdownGracefully();
+//            workerGroup.shutdownGracefully();
         }
     }
 }

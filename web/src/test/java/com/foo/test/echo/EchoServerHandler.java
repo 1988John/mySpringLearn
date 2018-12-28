@@ -11,6 +11,12 @@ import io.netty.util.CharsetUtil;
 @Sharable
 public class EchoServerHandler extends ChannelInboundHandlerAdapter{
     @Override
+    public void handlerAdded(ChannelHandlerContext ctx) throws Exception {
+        super.handlerAdded(ctx);
+        System.out.println("my handlerAdded method is invoked");
+    }
+
+    @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
         //将客户端传入的消息转换为Netty的ByteBuf类型
         ByteBuf in = (ByteBuf) msg;

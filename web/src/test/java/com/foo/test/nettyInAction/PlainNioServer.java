@@ -2,7 +2,6 @@ package com.foo.test.nettyInAction;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
-import java.net.ServerSocket;
 import java.nio.ByteBuffer;
 import java.nio.channels.SelectionKey;
 import java.nio.channels.Selector;
@@ -15,9 +14,7 @@ public class PlainNioServer {
     public void serve(int port) throws IOException {
         ServerSocketChannel serverChannel = ServerSocketChannel.open();
         serverChannel.configureBlocking(false);
-        ServerSocket ss = serverChannel.socket();
-        InetSocketAddress address = new InetSocketAddress(port);
-        ss.bind(address);                                            //1
+        serverChannel.socket().bind(new InetSocketAddress(port));                                            //1
         Selector selector = Selector.open();                        //2
         serverChannel.register(selector, SelectionKey.OP_ACCEPT);    //3
         final ByteBuffer msg = ByteBuffer.wrap("Hi!\r\n".getBytes());
