@@ -6,7 +6,7 @@ import java.util.function.Consumer;
 import java.util.function.Predicate;
 
 /**
- * @author jiangwang <jiangwang@kuaishou.com>
+ * @author jiangwang
  * Created on 2018-12-14
  */
 public class LambdaDemo {
