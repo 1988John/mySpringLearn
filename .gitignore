@@ -1,5 +1,6 @@
 .idea
 *.iml
+important.properties
 .settings
 *.classpath
 *.project
