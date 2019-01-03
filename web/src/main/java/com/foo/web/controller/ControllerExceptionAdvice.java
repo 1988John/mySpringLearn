@@ -1,5 +1,11 @@
 package com.foo.web.controller;
 
+import java.util.List;
+import java.util.Set;
+
+import javax.validation.ConstraintViolation;
+import javax.validation.ConstraintViolationException;
+
 import org.hibernate.validator.method.MethodConstraintViolation;
 import org.hibernate.validator.method.MethodConstraintViolationException;
 import org.slf4j.Logger;
@@ -7,21 +13,15 @@ import org.slf4j.LoggerFactory;
 import org.springframework.validation.BindException;
 import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.MissingServletRequestParameterException;
-import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
-
-import javax.validation.ConstraintViolation;
-import javax.validation.ConstraintViolationException;
-import java.util.List;
-import java.util.Set;
 
 
 /**
  * @author jiangwang
  * 10:48 2018/5/14
  */
-@ControllerAdvice
+//@ControllerAdvice
 public class ControllerExceptionAdvice {
 
     private final Logger logger = LoggerFactory.getLogger(getClass());

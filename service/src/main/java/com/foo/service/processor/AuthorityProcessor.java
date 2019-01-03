@@ -1,6 +1,7 @@
 package com.foo.service.processor;
 
-import com.foo.service.annotation.Authority;
+import java.lang.reflect.Method;
+
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
@@ -8,9 +9,8 @@ import org.aspectj.lang.annotation.Pointcut;
 import org.aspectj.lang.reflect.MethodSignature;
 import org.springframework.core.Ordered;
 import org.springframework.core.annotation.AnnotationUtils;
-import org.springframework.stereotype.Component;
 
-import java.lang.reflect.Method;
+import com.foo.service.annotation.Authority;
 
 /**
  * 权限注解解析器
@@ -19,7 +19,7 @@ import java.lang.reflect.Method;
  * @date 20:13 2018/7/30
  */
 @Aspect
-@Component
+//@Component
 public class AuthorityProcessor implements Ordered{
 
     private int order = LOWEST_PRECEDENCE - 1000; // 指定执行顺序

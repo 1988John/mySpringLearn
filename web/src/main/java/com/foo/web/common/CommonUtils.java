@@ -1,14 +1,15 @@
 package com.foo.web.common;
 
-import com.alibaba.fastjson.JSON;
-import com.foo.domain.user.User;
+import java.util.HashMap;
+import java.util.Map;
+
 import org.springframework.beans.BeanWrapper;
 import org.springframework.beans.MutablePropertyValues;
 import org.springframework.beans.PropertyAccessorFactory;
 import org.springframework.beans.PropertyValues;
 
-import java.util.HashMap;
-import java.util.Map;
+import com.alibaba.fastjson.JSON;
+import com.foo.domain.user.User;
 
 /**
  * @author jiangwang
