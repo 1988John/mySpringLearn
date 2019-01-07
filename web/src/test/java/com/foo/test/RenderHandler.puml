@@ -1,0 +1,34 @@
+@startuml
+
+RenderHandler <|.. AbstractRenderHandler
+AbstractRenderHandler <|-- IntownRenderHandler
+AbstractRenderHandler <|-- MomentRenderHandler
+AbstractRenderHandler <|-- OtherRenderHandler
+
+interface RenderHandler {
+    +boolean support()
+    +handler()
+}
+
+abstract class AbstractRenderHandler {
+    +handler()
+    #doHandler()
+}
+
+class IntownRenderHandler {
+    +boolean support()
+    #doHandler()
+}
+
+class MomentRenderHandler {
+    +boolean support()
+    #doHandler()
+}
+
+class OtherRenderHandler {
+    +boolean support()
+    #doHandler()
+}
+
+
+@enduml
