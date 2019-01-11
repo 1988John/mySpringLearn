@@ -11,6 +11,7 @@ public class ExecutorServiceDemo {
     public static void main(String[] args) {
         //1，线程池创建
         ExecutorService executor = Executors.newFixedThreadPool(2);
+        Executors.newWorkStealingPool();
         //2，新建任务
         Runnable task = new Runnable() {
             @Override
