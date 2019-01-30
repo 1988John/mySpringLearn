@@ -125,20 +125,10 @@
             <groupId>cglib</groupId>
             <artifactId>cglib</artifactId>
         </dependency>
-        <!-- i come from mater -->
-        <dependency>
-            <groupId>org.apache.shiro</groupId>
-            <artifactId>shiro-core</artifactId>
-        </dependency>
         <!-- test rebase -->
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-validator</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.apache.lucene</groupId>
-            <artifactId>lucene-core</artifactId>
         </dependency>
 
     </dependencies>
