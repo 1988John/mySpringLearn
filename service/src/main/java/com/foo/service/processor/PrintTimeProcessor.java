@@ -9,13 +9,14 @@ import org.aspectj.lang.annotation.Pointcut;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.core.Ordered;
+import org.springframework.stereotype.Component;
 
 /**
  * @author jiangwang
  * @date 11:28 2018/5/14
  */
 @Aspect
-//@Component
+@Component
 public class PrintTimeProcessor implements Ordered{
 
     private int order = LOWEST_PRECEDENCE - 1000; // 指定执行顺序
