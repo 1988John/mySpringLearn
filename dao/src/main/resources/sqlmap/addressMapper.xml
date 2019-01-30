@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.foo.dao.user.UserDao">
+<mapper namespace="com.foo.dao.user.AddressDao">
 
 	<!-- 所有查询列 -->
 	<sql id="QUERY_COLUMN_LIST">
 		<![CDATA[
-			id,name,age,addressId
+			id,province,city,town
 		]]>
 	</sql>
 
     <!-- deal 查询列来源表-->
     <sql id="QUERY_TABLE">
-    	<![CDATA[ user ]]>
+    	<![CDATA[ address ]]>
     </sql>
     <!-- deal 查询列来源表-->
 	<sql id="QUERY_FROM_TABLE">
@@ -22,36 +22,17 @@
 	<!-- 全部条件(更多功能可以通过queryData扩展实现)  -->
 	<sql id="QUERY_WHERE_CLAUSE">
 		<where>
-			<if test="name != null "><![CDATA[AND name = #{name}]]></if>
+			<if test="id != null "><![CDATA[AND id = #{id}]]></if>
 		</where>
 	</sql>
 
-	<!-- 插入deal记录 -->
-	<insert id="insertEntry" parameterType="user" >
-		<![CDATA[
-			INSERT  INTO ]]>
-        <include refid="QUERY_TABLE"/>
-		<![CDATA[
-			 (name)
-			VALUES (#{name});
-		]]>
-
-	</insert>
-
 	<!-- 通过条件查询数据集合 -->
-	<select id="selectEntryByName" parameterType="user" resultType="user">
+	<select id="selectEntryById" parameterType="Integer" resultType="address">
 		<![CDATA[SELECT]]>
 		<include refid="QUERY_COLUMN_LIST"/>
 		<include refid="QUERY_FROM_TABLE"/>
-		<include refid="QUERY_WHERE_CLAUSE"/>
+		where id = #{id}
 	</select>
-
-    <!-- 通过条件查询数据集合 -->
-    <select id="queryAll" resultType="user">
-        <![CDATA[SELECT]]>
-        <include refid="QUERY_COLUMN_LIST"/>
-        <include refid="QUERY_FROM_TABLE"/>
-    </select>
 
 	<!-- 判断表是否为空 -->
 	<select id="selectCount" resultType="Integer">

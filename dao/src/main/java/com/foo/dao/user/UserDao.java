@@ -1,5 +1,7 @@
 package com.foo.dao.user;
 
+import java.util.List;
+
 import com.foo.domain.user.User;
 
 /**
@@ -10,4 +12,5 @@ public interface UserDao {
     int insertEntry(User user);
     User selectEntryByName(User user);
     int selectCount();
+    List<User> queryAll();
 }
