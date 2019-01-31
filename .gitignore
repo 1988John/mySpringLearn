@@ -1,6 +1,6 @@
 .idea
 *.iml
-src/main/resources/important.properties
+web/src/main/resources/important.properties
 .settings
 *.classpath
 *.project
