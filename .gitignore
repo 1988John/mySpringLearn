@@ -1,5 +1,6 @@
 .idea
 *.iml
+mySpringLearn/web/src/main/resources/important.properties
 .settings
 *.classpath
 *.project

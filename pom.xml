@@ -107,7 +107,6 @@
             </dependency>
             <!-- logback日志实现框架 -->
             <dependency>
-                <groupId>ch.qos.logback</groupId>
                 <artifactId>logback-classic</artifactId>
                 <version>${logback.version}</version>
             </dependency>
