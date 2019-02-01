@@ -1,8 +1,9 @@
 package com.foo.web.controller;
 
-import com.foo.domain.user.User;
-import com.foo.service.annotation.PrintTime;
-import com.foo.service.user.OrderService;
+import java.util.List;
+
+import javax.annotation.Resource;
+
 import org.hibernate.validator.constraints.NotBlank;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -12,8 +13,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.annotation.Resource;
-import java.util.List;
+import com.foo.domain.user.User;
+import com.foo.service.annotation.PrintTime;
+import com.foo.service.user.OrderService;
 
 /**
  * @author jiangwang
@@ -30,6 +32,8 @@ public class UserController {
 
     @RequestMapping(value = "/value", method={RequestMethod.GET})
     public  String value(String myValue){
+        logger.info(myValue);
+        logger.error(myValue);
         return myValue;
     }
 
