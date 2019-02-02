@@ -8,7 +8,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  */
 public class Main {
     public static void main(String[] args) {
-        ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext("/resources/spring/spring-test");
+        ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext("spring/spring-test.xml");
 
     }
 }
