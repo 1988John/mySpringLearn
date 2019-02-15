@@ -1,4 +1,4 @@
-package com.foo.test.disruptor.hello;
+package com.foo.web.common;
 
 import com.lmax.disruptor.EventHandler;
 
@@ -12,7 +12,6 @@ import com.lmax.disruptor.EventHandler;
 public class LongEventHandler implements EventHandler<LongEvent> {
     @Override 
     public void onEvent(LongEvent longEvent, long sequence, boolean endOfBatch) {
-        System.out.println("consume: "+longEvent.getValue());
-        System.out.println();
-    } 
-} 
+        System.out.println(Thread.currentThread().getName() + " : consume: "+longEvent.getValue()+"\n");
+    }
+}

@@ -1,4 +1,4 @@
-package com.foo.test.disruptor.hello;
+package com.foo.web.common;
 
 import java.nio.ByteBuffer;
 
@@ -21,11 +21,7 @@ public class LongEventProducerWithTranslator {
     //一个translator可以看做一个事件初始化器，publicEvent方法会调用它
     //填充Event
     private static final EventTranslatorOneArg<LongEvent, ByteBuffer> TRANSLATOR =
-            new EventTranslatorOneArg<LongEvent, ByteBuffer>() {
-                public void translateTo(LongEvent event, long sequence, ByteBuffer bb) { 
-                    event.setValue(bb.getLong(0)); 
-                } 
-            };
+            (LongEvent event, long sequence, ByteBuffer bb) -> event.setValue(bb.getLong(0));
 
     public void onData(ByteBuffer bb) {
         ringBuffer.publishEvent(TRANSLATOR, bb); 

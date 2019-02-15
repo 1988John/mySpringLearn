@@ -1,8 +1,9 @@
 package com.foo.service.user.impl;
 
+import org.springframework.stereotype.Service;
+
 import com.foo.service.annotation.Authority;
 import com.foo.service.user.OrderService;
-import org.springframework.stereotype.Service;
 
 /**
  * @author jiangwang3
@@ -15,5 +16,9 @@ public class OrderServiceImpl implements OrderService{
     @Authority(role = "foo")
     public String getOrder() {
         return null;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(4);
     }
 }

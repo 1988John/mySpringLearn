@@ -1,4 +1,4 @@
-package com.foo.test.disruptor.hello;
+package com.foo.web.common;
 
 import java.nio.ByteBuffer;
 import java.util.concurrent.Executor;
@@ -16,7 +16,7 @@ public class LongEventMain {
         LongEventFactory factory = new LongEventFactory();
 
         // Specify the size of the ring buffer, must be power of 2.
-        int bufferSize = 1024;
+        int bufferSize = 8;
 
         // Construct the Disruptor 
         Disruptor<LongEvent> disruptor = new Disruptor<>(factory, bufferSize, executor);

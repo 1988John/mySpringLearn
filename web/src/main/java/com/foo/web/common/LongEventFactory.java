@@ -1,4 +1,4 @@
-package com.foo.test.disruptor.hello;
+package com.foo.web.common;
 
 import com.lmax.disruptor.EventFactory;
 

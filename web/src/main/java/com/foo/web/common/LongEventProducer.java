@@ -1,4 +1,4 @@
-package com.foo.test.disruptor.hello;
+package com.foo.web.common;
 
 
 import java.nio.ByteBuffer;
@@ -16,7 +16,7 @@ public class LongEventProducer {
      * onData用来发布事件，每调用一次就发布一次事件事件
      * 它的参数会通过事件传递给消费者
      *
-     * @param bb
+     * @param bb data
      */
     public void onData(ByteBuffer bb) {
         //可以把ringBuffer看做一个事件队列，那么next就是得到下面一个事件槽
@@ -30,4 +30,8 @@ public class LongEventProducer {
             ringBuffer.publish(sequence);
         }
     }
-} 
+
+    public static void main(String[] args) {
+        System.out.println(21);
+    }
+}
