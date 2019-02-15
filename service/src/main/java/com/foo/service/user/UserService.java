@@ -1,14 +1,13 @@
 package com.foo.service.user;
 
+import javax.annotation.Resource;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.foo.dao.user.UserDao;
 import com.foo.domain.user.User;
 import com.foo.service.annotation.PrintTime;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-
-import javax.annotation.Resource;
 
 /**
  * @author jiangwang
@@ -44,5 +43,9 @@ public class UserService {
     public String serviceAspect(){
         logger.info("Service层---测试切面");
         return "serviceAspect";
+    }
+
+    public static void main(String[] args) {
+        System.out.println(1);
     }
 }
