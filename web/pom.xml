@@ -145,6 +145,16 @@
             <artifactId>log4j-slf4j-impl</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>commons-fileupload</groupId>
+            <artifactId>commons-fileupload</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+        </dependency>
+
         <!-- logback日志实现框架 -->
         <!--<dependency>-->
             <!--<groupId>ch.qos.logback</groupId>-->

@@ -1,5 +1,7 @@
 package com.foo.web.controller;
 
+import java.util.Arrays;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -8,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
 /**
  * @author fooisart
@@ -20,8 +23,8 @@ public class UserController {
     private final Logger logger = LoggerFactory.getLogger(getClass());
 
     @RequestMapping(value = "/get", method={RequestMethod.GET})
-    public  String get(int age,String name){
-        return name + age;
+    public  String get(@RequestParam int age,@RequestParam String name,@RequestParam CommonsMultipartFile voice){
+        return name + age+voice;
     }
 
     @RequestMapping(value = "/post", method={RequestMethod.POST})
@@ -68,7 +71,9 @@ public class UserController {
     }
 
     @RequestMapping(value = "/postRBByObject", method={RequestMethod.POST})
-    public  String postRequestBodyByObject(@RequestBody User user){
+    public  String postRequestBodyByObject(@RequestParam(value = "voice") CommonsMultipartFile voice,
+                                           @RequestBody User user){
+        System.out.println(Arrays.toString(voice.getBytes()));
         return user.toString();
     }
 
