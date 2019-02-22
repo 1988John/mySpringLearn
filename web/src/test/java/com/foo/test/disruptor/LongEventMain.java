@@ -1,4 +1,4 @@
-package com.foo.web.common;
+package com.foo.test.disruptor;
 
 import java.nio.ByteBuffer;
 import java.util.concurrent.Executor;
@@ -10,7 +10,7 @@ import com.lmax.disruptor.dsl.Disruptor;
 public class LongEventMain {
     public static void main(String[] args) throws InterruptedException {
         // Executor that will be used to construct new threads for consumers 
-        Executor executor = Executors.newCachedThreadPool();
+        Executor executor = Executors.newFixedThreadPool(10);
 
         // The factory for the event 
         LongEventFactory factory = new LongEventFactory();

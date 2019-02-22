@@ -1,4 +1,4 @@
-package com.foo.web.common;
+package com.foo.test.disruptor;
 
 
 import java.nio.ByteBuffer;
@@ -26,12 +26,9 @@ public class LongEventProducer {
             LongEvent event = ringBuffer.getPreallocated(sequence);// for the sequence
             event.setValue(bb.getLong(0));
         } finally {
-            //发布事件 
+            //发布事件
             ringBuffer.publish(sequence);
         }
     }
 
-    public static void main(String[] args) {
-        System.out.println(21);
-    }
 }

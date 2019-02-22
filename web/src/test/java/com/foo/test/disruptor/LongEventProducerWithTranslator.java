@@ -1,4 +1,4 @@
-package com.foo.web.common;
+package com.foo.test.disruptor;
 
 import java.nio.ByteBuffer;
 
