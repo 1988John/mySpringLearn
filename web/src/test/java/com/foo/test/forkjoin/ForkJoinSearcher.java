@@ -1,4 +1,4 @@
-package com.foo.test.thread.forkjoin;
+package com.foo.test.forkjoin;
 
 import java.util.Arrays;
 import java.util.concurrent.RecursiveTask;

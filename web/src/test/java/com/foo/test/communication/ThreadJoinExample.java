@@ -1,4 +1,4 @@
-package com.foo.test.thread.communication;
+package com.foo.test.communication;
 
 public class ThreadJoinExample {
 

@@ -1,4 +1,4 @@
-package com.foo.test.thread.date;
+package com.foo.test.date;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

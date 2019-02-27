@@ -1,4 +1,4 @@
-package com.foo.test.thread.threadlocal;
+package com.foo.test.threadlocal;
 
 import java.text.SimpleDateFormat;
 import java.util.Random;

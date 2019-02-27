@@ -1,4 +1,4 @@
-package com.foo.test.thread.executor;
+package com.foo.test.executor;
 
 public class WorkerThread implements Runnable {
   

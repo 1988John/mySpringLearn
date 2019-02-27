@@ -1,4 +1,4 @@
-package com.foo.test.thread.latch;
+package com.foo.test.latch;
 
 import com.alibaba.fastjson.JSON;
 import org.junit.Test;

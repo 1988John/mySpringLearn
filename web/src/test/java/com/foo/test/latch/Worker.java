@@ -1,4 +1,4 @@
-package com.foo.test.thread.latch;
+package com.foo.test.latch;
 
 import java.util.List;
 import java.util.concurrent.CountDownLatch;

@@ -1,4 +1,4 @@
-package com.foo.test.thread.semaphore;
+package com.foo.test.semaphore;
 
 import java.util.concurrent.Semaphore;
 
