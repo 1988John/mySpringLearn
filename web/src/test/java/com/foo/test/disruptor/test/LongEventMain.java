@@ -3,23 +3,22 @@ package com.foo.test.disruptor.test;
 import java.nio.ByteBuffer;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
+import java.util.concurrent.ThreadFactory;
 
 import com.lmax.disruptor.RingBuffer;
 import com.lmax.disruptor.dsl.Disruptor;
 
 public class LongEventMain {
+
     public static void main(String[] args) throws InterruptedException {
         // Executor that will be used to construct new threads for consumers 
         Executor executor = Executors.newFixedThreadPool(10);
-
-        // The factory for the event 
-        LongEventFactory factory = new LongEventFactory();
 
         // Specify the size of the ring buffer, must be power of 2.
         int bufferSize = 8;
 
         // Construct the Disruptor 
-        Disruptor<LongEvent> disruptor = new Disruptor<>(factory, bufferSize, executor);
+        Disruptor<LongEvent> disruptor = new Disruptor<>(LongEvent:: new, bufferSize, executor);
 
         // Connect the handler 
         disruptor.handleEventsWith(new LongEventHandler(),new LongEventHandler2());

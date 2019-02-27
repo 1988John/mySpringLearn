@@ -19,7 +19,7 @@ public class Producer {
         //可以把ringBuffer看作是一个事件队列，那么next就是得到下一个事件槽
         long sequence = ringBuffer.next();
         try {
-            Order order = ringBuffer.getPreallocated(sequence);
+            Order order = ringBuffer.get(sequence);
             order.setId(data);
         } catch (Exception e) {
             e.printStackTrace();

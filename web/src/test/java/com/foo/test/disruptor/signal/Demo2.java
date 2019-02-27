@@ -36,7 +36,7 @@ public class Demo2 {
         //下面这个生产8个数据，图简单就写到主线程算了
         for (int i = 0; i < 8; i++) {
             long seq = ringBuffer.next();
-            ringBuffer.getPreallocated(seq).setPrice(Math.random() * 9999);
+            ringBuffer.get(seq).setPrice(Math.random() * 9999);
             ringBuffer.publish(seq);
         }
 

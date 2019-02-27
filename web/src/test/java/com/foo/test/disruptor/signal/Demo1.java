@@ -52,7 +52,7 @@ public class Demo1 {
                 for(int i=0;i<1000;i++){  
                     seq=ringBuffer.next();//占个坑 --ringBuffer一个可用区块  
                       
-                    ringBuffer.getPreallocated(seq).setPrice(Math.random()*9999);//给这个区块放入 数据  如果此处不理解，想想RingBuffer的结构图
+                    ringBuffer.get(seq).setPrice(Math.random()*9999);//给这个区块放入 数据  如果此处不理解，想想RingBuffer的结构图
 
                     ringBuffer.publish(seq);//发布这个区块的数据使handler(consumer)可见
                 }  

@@ -16,7 +16,7 @@ public class MsgEventProducer {
     public void produce(){
         long next = ringBuffer.next();
         try {
-            MsgEvent msgEvent = ringBuffer.getPreallocated(next);
+            MsgEvent msgEvent = ringBuffer.get(next);
             msgEvent.setMsg("abd"+Math.random());
         } finally {
             ringBuffer.publish(next);

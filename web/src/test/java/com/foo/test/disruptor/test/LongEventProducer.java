@@ -23,7 +23,7 @@ public class LongEventProducer {
         long sequence = ringBuffer.next();
         try {
             //用上面的索引取出一个空的事件用于填充
-            LongEvent event = ringBuffer.getPreallocated(sequence);// for the sequence
+            LongEvent event = ringBuffer.claimAndGetPreallocated(sequence);// for the sequence
             event.setValue(bb.getLong(0));
         } finally {
             //发布事件，写入ringbuffer
