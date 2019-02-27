@@ -1,4 +1,4 @@
-package com.foo.test.disruptor;
+package com.foo.test.disruptor.test;
 
 import com.lmax.disruptor.EventFactory;
 

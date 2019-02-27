@@ -1,4 +1,4 @@
-package com.foo.test.disruptor;
+package com.foo.test.disruptor.test;
 
 import java.nio.ByteBuffer;
 import java.util.concurrent.Executor;
@@ -22,13 +22,14 @@ public class LongEventMain {
         Disruptor<LongEvent> disruptor = new Disruptor<>(factory, bufferSize, executor);
 
         // Connect the handler 
-        disruptor.handleEventsWith(new LongEventHandler());
+        disruptor.handleEventsWith(new LongEventHandler(),new LongEventHandler2());
 
         // Start the Disruptor, starts all threads running 
         disruptor.start();
 
         // Get the ring buffer from the Disruptor to be used for publishing. 
         RingBuffer<LongEvent> ringBuffer = disruptor.getRingBuffer();
+
 
         LongEventProducer producer = new LongEventProducer(ringBuffer);
 
@@ -38,5 +39,23 @@ public class LongEventMain {
             producer.onData(bb);
             Thread.sleep(1000);
         }
+
+//        for (int n = 0;n<5;n++){
+//            LongEventProducer producer = new LongEventProducer(ringBuffer);
+//
+//            ByteBuffer bb = ByteBuffer.allocate(8);
+//            new Thread(new Runnable() {
+//                @Override
+//                public void run() {
+//                    for (long l = 0; l<3; l++) {
+//                        bb.putLong(0, l);
+//                        producer.onData(bb);
+//                    }
+//                }
+//            }).start();
+//        }
+
+
+
     }
 } 

@@ -1,4 +1,4 @@
-package com.foo.test.disruptor;
+package com.foo.test.disruptor.test;
 
 import com.lmax.disruptor.EventHandler;
 import com.lmax.disruptor.util.Util;
@@ -13,13 +13,11 @@ import com.lmax.disruptor.util.Util;
 public class LongEventHandler implements EventHandler<LongEvent> {
     @Override 
     public void onEvent(LongEvent longEvent, long sequence, boolean endOfBatch) {
-        System.out.println(Thread.currentThread().getName() + " : consume: "+longEvent.getValue()+"\n");
-    }
-
-    public static void main(String[] args) {
-        int indexShift = Util.log2(8);
-        System.out.println(indexShift);
-
-        System.out.println(8 >>> indexShift);
+//        try {
+//            Thread.sleep(1000 * 5);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
+        System.out.println(Thread.currentThread().getName() + " : consume1: "+sequence+"\n");
     }
 }
