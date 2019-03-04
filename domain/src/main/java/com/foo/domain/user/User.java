@@ -8,6 +8,12 @@ public class User {
     private Integer id;
     private String name;
 
+    public User(String name) {
+        this.name = name;
+    }
+
+    public User(){}
+
     public Integer getId() {
         return id;
     }

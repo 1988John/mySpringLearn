@@ -1,4 +1,4 @@
-package com.foo.test.disruptor.test;
+package com.foo.domain.event;
 /*
  * To get started with the Disruptor we are going to consider very simple and contrived example,
  * one that will pass a single long value from a producer to a consumer, where the consumer will simply print out the value.

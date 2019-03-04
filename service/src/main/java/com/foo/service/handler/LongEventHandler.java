@@ -1,7 +1,7 @@
-package com.foo.test.disruptor.test;
+package com.foo.service.handler;
 
+import com.foo.domain.event.LongEvent;
 import com.lmax.disruptor.EventHandler;
-import com.lmax.disruptor.util.Util;
 
 /*
  * Once we have the event defined we need to create a consumer that will handle these events.

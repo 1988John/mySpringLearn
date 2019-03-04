@@ -3,8 +3,10 @@ package com.foo.test.disruptor.test;
 import java.nio.ByteBuffer;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
-import java.util.concurrent.ThreadFactory;
 
+import com.foo.domain.event.LongEvent;
+import com.foo.service.handler.LongEventHandler;
+import com.foo.service.handler.LongEventHandler2;
 import com.lmax.disruptor.RingBuffer;
 import com.lmax.disruptor.dsl.Disruptor;
 

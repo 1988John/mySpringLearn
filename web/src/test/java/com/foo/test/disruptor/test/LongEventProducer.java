@@ -3,6 +3,7 @@ package com.foo.test.disruptor.test;
 
 import java.nio.ByteBuffer;
 
+import com.foo.domain.event.LongEvent;
 import com.lmax.disruptor.RingBuffer;
 
 public class LongEventProducer {

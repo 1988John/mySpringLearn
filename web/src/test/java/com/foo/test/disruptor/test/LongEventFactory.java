@@ -1,5 +1,6 @@
 package com.foo.test.disruptor.test;
 
+import com.foo.domain.event.LongEvent;
 import com.lmax.disruptor.EventFactory;
 
 /*
