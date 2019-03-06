@@ -13,11 +13,6 @@ import com.lmax.disruptor.EventHandler;
 public class LongEventHandler implements EventHandler<LongEvent> {
     @Override 
     public void onEvent(LongEvent longEvent, long sequence, boolean endOfBatch) {
-//        try {
-//            Thread.sleep(1000 * 5);
-//        } catch (InterruptedException e) {
-//            e.printStackTrace();
-//        }
-        System.out.println(Thread.currentThread().getName() + " : consume1: "+sequence+"\n");
+        System.out.println("value==>"+longEvent.getValue());
     }
 }

@@ -1,15 +1,19 @@
 package com.foo.service.disruptor;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.function.Consumer;
+import java.util.concurrent.ThreadFactory;
 
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Service;
 
-import com.foo.domain.user.User;
+import com.foo.domain.event.LongEvent;
+import com.foo.service.handler.LongEventHandler;
+import com.lmax.disruptor.BlockingWaitStrategy;
+import com.lmax.disruptor.EventFactory;
+import com.lmax.disruptor.RingBuffer;
+import com.lmax.disruptor.WaitStrategy;
+import com.lmax.disruptor.dsl.Disruptor;
+import com.lmax.disruptor.dsl.ProducerType;
 
 /**
  * @author Fooisart
@@ -18,19 +22,31 @@ import com.foo.domain.user.User;
 @Service
 public class DisruptorService implements ApplicationListener<ContextRefreshedEvent> {
     private volatile boolean initialized = false;
+    private static final int BUFFER_SIZE = 4;
+    RingBuffer<LongEvent> ringBuffer;
 
     @Override
     public synchronized void onApplicationEvent(ContextRefreshedEvent event) {
         if (!initialized) {
-            //contextRefreshed(event.getApplicationContext());
+            ThreadFactory threadFactory = Thread::new;
+            WaitStrategy waitStrategy = new BlockingWaitStrategy();
+
+            Disruptor<LongEvent> disruptor = new Disruptor<>(LongEvent::new,BUFFER_SIZE,threadFactory,
+                    ProducerType.SINGLE,waitStrategy);
+            disruptor.handleEventsWith(new LongEventHandler());
+            disruptor.start();
+            ringBuffer = disruptor.getRingBuffer();
+            //保证初始化一次
             initialized = true;
         }
     }
-
-    public static void main(String[] args) {
-        List<User> list = Arrays.asList(new User("aa"),new User("bb"),new User("cc"));
-        StringBuilder sb = new StringBuilder();
-        list.forEach(user -> sb.append(user.getName()));
-        System.out.println(sb);
+    public void produceEvent(Long value){
+        long sequence = ringBuffer.next();
+        try {
+            LongEvent event = ringBuffer.get(sequence);
+            event.setValue(value);
+        } finally {
+            ringBuffer.publish(sequence);
+        }
     }
 }
