@@ -13,6 +13,9 @@ public class User {
         this.name = name;
     }
 
+    public User() {
+    }
+
     public int getAge() {
         return age;
     }
