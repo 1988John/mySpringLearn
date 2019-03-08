@@ -10,7 +10,7 @@ public class TradeTransactionInDBHandler implements EventHandler<TradeTransactio
     @Override  
     public void onEvent(TradeTransaction event, long sequence,  
             boolean endOfBatch) throws Exception {  
-        this.onEvent(event);  
+//        this.onEvent(event);
     }  
   
     @Override  

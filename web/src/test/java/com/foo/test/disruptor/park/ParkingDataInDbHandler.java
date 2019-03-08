@@ -20,7 +20,7 @@ public class ParkingDataInDbHandler implements EventHandler<InParkingDataEvent>,
    @Override
    public void onEvent(InParkingDataEvent event, long sequence, boolean endOfBatch) throws Exception {
       // TODO Auto-generated method stub
-      this.onEvent(event);  
+//      this.onEvent(event);
    }
 
 }

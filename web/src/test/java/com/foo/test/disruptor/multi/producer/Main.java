@@ -30,9 +30,9 @@ public class Main {
 
         SequenceBarrier barrier = ringBuffer.newBarrier();
 
-        Consumer[] consumers = new Consumer[3];
+        ConsumerHandler[] consumers = new ConsumerHandler[3];
         for(int i=0;i<consumers.length;i++){
-            consumers[i]=new Consumer("c"+i);
+            consumers[i]=new ConsumerHandler("c"+i);
         }
 
         WorkerPool<Order> workerPool = new WorkerPool<Order>(ringBuffer,
