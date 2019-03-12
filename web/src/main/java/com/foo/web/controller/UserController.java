@@ -3,6 +3,7 @@ package com.foo.web.controller;
 import java.util.List;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 
 import org.hibernate.validator.constraints.NotBlank;
 import org.slf4j.Logger;
@@ -11,6 +12,7 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.foo.domain.user.User;
 import com.foo.service.annotation.PrintTime;
@@ -20,7 +22,7 @@ import com.foo.service.user.OrderService;
  * @author jiangwang
  * @date  2018/5/14
  */
-//@RestController
+@RestController
 @RequestMapping(value = "/user")
 @Validated
 public class UserController {
@@ -30,8 +32,8 @@ public class UserController {
     @Resource private OrderService orderService;
 
     @RequestMapping(value = "/value", method={RequestMethod.GET})
-    public  String value(String myValue){
-        return myValue;
+    public  String value(String myValue,HttpServletRequest request){
+        return myValue + "," + request.getServerName();
     }
 
     @RequestMapping(value = "/domain", method={RequestMethod.GET})
