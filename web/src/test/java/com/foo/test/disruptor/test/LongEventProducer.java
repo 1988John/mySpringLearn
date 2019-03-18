@@ -28,7 +28,6 @@ public class LongEventProducer {
             event.setValue(bb.getLong(0));
         } finally {
             //发布事件，写入ringbuffer
-            System.out.println(Thread.currentThread().getName() + "生产序列==>"+sequence);
             ringBuffer.publish(sequence);
         }
     }

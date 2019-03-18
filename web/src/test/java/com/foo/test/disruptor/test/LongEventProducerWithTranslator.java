@@ -21,8 +21,7 @@ public class LongEventProducerWithTranslator {
 
     //一个translator可以看做一个事件初始化器，publicEvent方法会调用它
     //填充Event
-    private static final EventTranslatorOneArg<LongEvent, ByteBuffer> TRANSLATOR =
-            (LongEvent event, long sequence, ByteBuffer bb) -> event.setValue(bb.getLong(0));
+    private static final EventTranslatorOneArg<LongEvent, ByteBuffer> TRANSLATOR = (event,sequence,bb) -> event.setValue(bb.getLong(0));
 
     public void onData(ByteBuffer bb) {
         ringBuffer.publishEvent(TRANSLATOR, bb); 

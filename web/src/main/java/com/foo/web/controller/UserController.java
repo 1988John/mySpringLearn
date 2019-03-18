@@ -22,6 +22,11 @@ public class UserController {
 
     private final Logger logger = LoggerFactory.getLogger(getClass());
 
+    @RequestMapping(value = "/test", method={RequestMethod.GET})
+    public  String test(String name){
+        return name;
+    }
+
     @RequestMapping(value = "/get", method={RequestMethod.GET})
     public  String get(@RequestParam int age,@RequestParam String name,@RequestParam CommonsMultipartFile voice){
         return name + age+voice;

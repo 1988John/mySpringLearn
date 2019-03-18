@@ -1,5 +1,8 @@
 package com.foo.service.handler;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.foo.domain.event.LongEvent;
 import com.lmax.disruptor.EventHandler;
 
@@ -11,8 +14,10 @@ import com.lmax.disruptor.EventHandler;
  * @date 16:56 2019/2/2
  */
 public class LongEventHandler implements EventHandler<LongEvent> {
-    @Override 
+    private final Logger logger = LoggerFactory.getLogger(getClass());
+    @Override
     public void onEvent(LongEvent longEvent, long sequence, boolean endOfBatch) {
-        System.out.println("value==>"+longEvent.getValue());
+//        System.out.println(Thread.currentThread().getName() + " : consume1: "+sequence+"\n");
+        logger.info(Thread.currentThread().getName() + " : consume1: "+sequence+"\n");
     }
 }
