@@ -38,7 +38,6 @@ public class LongEventMain {
         for (long l = 0; true; l++) {
             bb.putLong(0, l);
             producer.onData(bb);
-            ringBuffer.publishEvent((event,sequence) -> event.setValue(bb.getLong(0)));
             Thread.sleep(1000);
         }
 

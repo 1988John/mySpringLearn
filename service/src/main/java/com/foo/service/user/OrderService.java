@@ -3,8 +3,8 @@ package com.foo.service.user;
 import org.springframework.stereotype.Service;
 
 /**
- * @author jiangwang3
- * @date 2018/7/30.
+ * Fields are isolated with @Contended,
+ * we can not risk accidental false sharing.
  */
 public interface OrderService {
     String getOrder();

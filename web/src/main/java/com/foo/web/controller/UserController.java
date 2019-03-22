@@ -21,10 +21,12 @@ import org.springframework.web.multipart.commons.CommonsMultipartFile;
 public class UserController {
 
     private final Logger logger = LoggerFactory.getLogger(getClass());
+    private static  boolean ON_OFF = Boolean.TRUE;
 
     @RequestMapping(value = "/test", method={RequestMethod.GET})
-    public  String test(String name){
-        return name;
+    public  boolean test(boolean onOff){
+        ON_OFF = onOff;
+        return ON_OFF;
     }
 
     @RequestMapping(value = "/get", method={RequestMethod.GET})
