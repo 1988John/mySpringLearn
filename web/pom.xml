@@ -143,6 +143,16 @@
             <artifactId>disruptor</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>org.wltea.ik-analyzer</groupId>
+            <artifactId>ik-analyzer</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.ansj</groupId>
+            <artifactId>ansj_seg</artifactId>
+        </dependency>
+
     </dependencies>
 
 </project>
