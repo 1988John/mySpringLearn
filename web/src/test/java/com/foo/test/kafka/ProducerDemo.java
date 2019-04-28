@@ -8,6 +8,8 @@ import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.clients.producer.ProducerRecord;
 import org.apache.kafka.common.serialization.StringSerializer;
 
+import kafka.utils.timer.TimingWheel;
+
 /**
  * @author fooisart
  * @date 19:20 26-04-2019
