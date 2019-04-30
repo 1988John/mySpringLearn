@@ -8,9 +8,15 @@
         </encoder>
     </appender>
 
+    <appender name="stash" class="net.logstash.logback.appender.LogstashTcpSocketAppender">
+        <destination>localhost:8888</destination>
+        <encoder charset="UTF-8" class="net.logstash.logback.encoder.LogstashEncoder" />
+    </appender>
+
     <logger name="org.springframework" level="info"/>
     <root level="info">
         <appender-ref ref="STDOUT"/>
+        <appender-ref ref="stash"/>
     </root>
 
 </configuration>
