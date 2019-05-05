@@ -46,8 +46,9 @@ public class ReadFromFile {
     }
 
     public static void main(String[] args) throws Exception{
-        String fileName = "/Users/fooisart/Desktop/客服语音/test/test1.tmp";
-        InputStream in = RecursiveTask.class.getResourceAsStream("/com/foo/test/io/test1.tmp");
+        String fileName = "/Users/fooisart/Downloads/test.csv";
+        ReadFromFile.readFileByBytes(fileName);
+        InputStream in = RecursiveTask.class.getResourceAsStream("/Users/fooisart/Downloads/test.csv");
         byte[] tempBytes = new byte[in.available()];
 //            ReadFromFile.showAvailableBytes(in);
         // 读入多个字节到字节数组中，byteread为一次读入的字节数
@@ -57,6 +58,6 @@ public class ReadFromFile {
         }
 //        File file = new File(fileName);
 //        System.out.println();
-        ReadFromFile.readFileByBytes(fileName);
+
     }
 }
