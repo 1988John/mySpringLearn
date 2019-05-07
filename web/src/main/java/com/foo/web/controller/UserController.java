@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.foo.domain.user.User;
 import com.foo.service.annotation.PrintTime;
+import com.foo.service.jdbc.RepeatContactsService;
 import com.foo.service.user.OrderService;
 
 /**
@@ -29,8 +30,11 @@ public class UserController {
 
     @Resource private OrderService orderService;
 
+    @Resource private RepeatContactsService contactsService;
+
     @RequestMapping(value = "/value", method={RequestMethod.GET})
     public  String value(String myValue){
+        contactsService.getRepeatContactsCountByPhone(myValue,myValue);
         return myValue;
     }
 
