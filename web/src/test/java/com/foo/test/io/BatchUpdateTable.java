@@ -1,5 +1,7 @@
 package com.foo.test.io;
 
+import static com.foo.test.io.FileUtil.readCsv;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.ArrayList;
@@ -18,20 +20,5 @@ public class BatchUpdateTable {
         String sqls = list.stream().map(table -> String.format(SQL, table)).collect(Collectors.joining());
         System.out.println(sqls); //打印出的结果直接执行即可
     }
-    /**
-     * 读取csv文件
-     *
-     * @author fooisart
-     * @date 17:38 2019/4/30
-     */
-    private static List<String> readCsv(String fileName) throws Exception{
-        List<String> fileNameList = new ArrayList<>();
-        BufferedReader reader = new BufferedReader(new FileReader(fileName));//换成你的文件名
-        reader.readLine();//第一行信息，为标题信息，不用，如果需要，注释掉
-        String line;
-        while((line=reader.readLine())!=null){
-            fileNameList.add(line);
-        }
-        return fileNameList;
-    }
+
 }
