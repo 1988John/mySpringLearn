@@ -1,6 +1,6 @@
 package com.foo.service.aop;
 
-import com.foo.service.annotation.PrintTime;
+import com.foo.service.annotation.Elapsed;
 
 /**
  * @author jiangwang3
@@ -9,13 +9,13 @@ import com.foo.service.annotation.PrintTime;
 //@Service
 public class StaticDemoService {
 
-    @PrintTime
+    @Elapsed
     public static void operateOrder(){
 //    public void operateOrder(){
         System.out.println("abcde");
     }
 
-    @PrintTime
+    @Elapsed
     public void operateOrderNotStatic(){
         System.out.println("absadfsdcde");
     }

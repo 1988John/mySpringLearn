@@ -263,6 +263,14 @@
                 <version>7.6.0</version>
             </dependency>
 
+            <!-- https://mvnrepository.com/artifact/com.ecyrd.speed4j/speed4j -->
+            <dependency>
+                <groupId>com.ecyrd.speed4j</groupId>
+                <artifactId>speed4j</artifactId>
+                <version>0.18</version>
+            </dependency>
+
+
         </dependencies>
     </dependencyManagement>
 

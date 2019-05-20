@@ -7,7 +7,7 @@ import java.lang.annotation.*;
  * Created by jiangwang3 on 2018/5/9.
  */
 @Retention(RetentionPolicy.RUNTIME)
-@Target({ElementType.METHOD})
+@Target({ElementType.METHOD,ElementType.TYPE})
 @Documented
-public @interface PrintTime {
+public @interface Elapsed {
 }

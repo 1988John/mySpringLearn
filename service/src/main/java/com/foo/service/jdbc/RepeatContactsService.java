@@ -13,7 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.google.common.collect.ImmutableMap;
 
-@Service("repeatContactsService")
+//@Service("repeatContactsService")
 @Transactional
 public class RepeatContactsService {  
   

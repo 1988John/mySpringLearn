@@ -30,6 +30,11 @@
             <groupId>org.aspectj</groupId>
             <artifactId>aspectjweaver</artifactId>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/com.ecyrd.speed4j/speed4j -->
+        <dependency>
+            <groupId>com.ecyrd.speed4j</groupId>
+            <artifactId>speed4j</artifactId>
+        </dependency>
 
     </dependencies>
 

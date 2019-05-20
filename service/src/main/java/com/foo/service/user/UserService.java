@@ -2,11 +2,9 @@ package com.foo.service.user;
 
 import com.foo.dao.user.UserDao;
 import com.foo.domain.user.User;
-import com.foo.service.annotation.PrintTime;
+import com.foo.service.annotation.Elapsed;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 
@@ -40,7 +38,7 @@ public class UserService {
         return userDao.selectEntryByName(user);
     }
 
-    @PrintTime
+    @Elapsed
     public String serviceAspect(){
         logger.info("Service层---测试切面");
         return "serviceAspect";

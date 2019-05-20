@@ -4,7 +4,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean class="com.foo.service.processor.PrintTimeProcessor"/>
+    <bean class="com.foo.service.processor.ElapsedProcessor"/>
 
     <!--<bean class="com.foo.service.aop.TimeHandlerAspect"/>-->
 
