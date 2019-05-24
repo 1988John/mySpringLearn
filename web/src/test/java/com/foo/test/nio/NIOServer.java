@@ -77,12 +77,11 @@ public class NIOServer {
                     channel.configureBlocking(false);
 
                     //在这里可以给客户端发送信息哦
-                    channel.write(ByteBuffer.wrap(new String("向客户端发送了一条信息").getBytes()));
+                    channel.write(ByteBuffer.wrap("向客户端发送了一条信息".getBytes()));
                     //在和客户端连接成功之后，为了可以接收到客户端的信息，需要给通道设置读的权限。
                     channel.register(this.selector, SelectionKey.OP_READ);
 
-                    // 获得了可读的事件
-                } else if (key.isReadable()) {
+                } else if (key.isReadable()) {// 获得了可读的事件
                     read(key);
                 }
 

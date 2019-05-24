@@ -55,7 +55,7 @@ public class Reactor implements Runnable{
             try {
                 SocketChannel c = serverSocket.accept();
                 if (c != null) {
-//                    new Handler();
+                    new Handler(selector, c);
                 }
             } catch (IOException ex) {
 
