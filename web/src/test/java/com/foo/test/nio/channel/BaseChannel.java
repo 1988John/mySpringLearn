@@ -6,6 +6,8 @@ import org.junit.Test;
 import java.io.RandomAccessFile;
 import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author jiangwang3
@@ -33,5 +35,17 @@ public class BaseChannel {
             bytesRead = inChannel.read(buf);
         }
         aFile.close();
+    }
+
+    public static void main(String[] args) {
+        List<Integer> list = new ArrayList<>();
+        list.add(1);list.add(2);list.add(3);
+        list.forEach(i -> {
+            if (i == 1) {
+                return;
+            }
+            System.out.println(i);
+        });
+
     }
 }
