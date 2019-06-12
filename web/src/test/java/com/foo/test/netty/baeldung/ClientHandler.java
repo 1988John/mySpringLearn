@@ -1,4 +1,6 @@
-package com.foo.test.netty;
+package com.foo.test.netty.baeldung;
+
+import com.foo.test.netty.baeldung.RequestData;
 
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;

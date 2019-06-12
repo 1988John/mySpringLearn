@@ -1,4 +1,7 @@
-package com.foo.test.netty;
+package com.foo.test.netty.baeldung;
+
+import com.foo.test.netty.baeldung.RequestData;
+import com.foo.test.netty.baeldung.ResponseData;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelFuture;

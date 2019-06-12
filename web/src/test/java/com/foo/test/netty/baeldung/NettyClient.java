@@ -1,4 +1,4 @@
-package com.foo.test.netty;
+package com.foo.test.netty.baeldung;
 
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.ChannelFuture;
@@ -25,7 +25,7 @@ public class NettyClient {
                 public void initChannel(SocketChannel ch) throws Exception {
                     ch.pipeline().addLast(
                             new RequestDataEncoder(),
-                            new ResponseDataDecoder(),
+                            new NettyServer.ResponseDataDecoder(),
                             new ClientHandler());
                 }
             });

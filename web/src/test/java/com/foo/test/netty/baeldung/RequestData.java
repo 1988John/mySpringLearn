@@ -1,4 +1,4 @@
-package com.foo.test.netty;
+package com.foo.test.netty.baeldung;
 
 public class RequestData {
     private int intValue;
