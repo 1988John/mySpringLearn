@@ -25,7 +25,7 @@ public class NettyClient {
                 public void initChannel(SocketChannel ch) throws Exception {
                     ch.pipeline().addLast(
                             new RequestDataEncoder(),
-                            new NettyServer.ResponseDataDecoder(),
+                            new ResponseDataDecoder(),
                             new ClientHandler());
                 }
             });

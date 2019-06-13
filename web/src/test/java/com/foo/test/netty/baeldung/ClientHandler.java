@@ -1,7 +1,5 @@
 package com.foo.test.netty.baeldung;
 
-import com.foo.test.netty.baeldung.RequestData;
-
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
 
@@ -16,7 +14,7 @@ public class ClientHandler extends ChannelInboundHandlerAdapter {
 
     @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
-        System.out.println(msg);
+        System.out.println((ResponseData)msg);
         ctx.close();
     }
 }

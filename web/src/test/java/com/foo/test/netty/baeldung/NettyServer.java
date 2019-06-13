@@ -23,12 +23,9 @@ public class NettyServer {
     }
 
     public static void main(String[] args) throws Exception {
-        int port;
-        if (args.length > 0) {
-            port = Integer.parseInt(args[0]);
-        } else {
-            port = 8080;
-        }
+        int port = args.length > 0
+                ? Integer.parseInt(args[0])
+                : 8080;
         new NettyServer(port).run();
     }
 
@@ -39,8 +36,7 @@ public class NettyServer {
             ServerBootstrap b = new ServerBootstrap();
             b.group(bossGroup, workerGroup)
                     .channel(NioServerSocketChannel.class)
-                    .childHandler(
-                            new ChannelInitializer<SocketChannel>() {
+                    .childHandler(new ChannelInitializer<SocketChannel>() {
                                 @Override
                                 public void initChannel(SocketChannel ch) throws Exception {
                                     ch.pipeline().addLast(
@@ -60,13 +56,4 @@ public class NettyServer {
         }
     }
 
-    public static class ResponseDataDecoder extends ReplayingDecoder<ResponseData> {
-
-        @Override
-        protected void decode(ChannelHandlerContext ctx, ByteBuf in, List<Object> out) throws Exception {
-            ResponseData data = new ResponseData();
-            data.setIntValue(in.readInt());
-            out.add(data);
-        }
-    }
 }
