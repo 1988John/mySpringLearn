@@ -1,6 +1,15 @@
 package com.foo.test;
 
+import static com.google.common.base.CaseFormat.LOWER_CAMEL;
+import static com.google.common.base.CaseFormat.LOWER_HYPHEN;
+import static com.google.common.base.CaseFormat.LOWER_UNDERSCORE;
+import static com.google.common.base.CaseFormat.UPPER_CAMEL;
+import static com.google.common.base.CaseFormat.UPPER_UNDERSCORE;
+
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -17,22 +26,17 @@ public class T {
     private static final String WITHOUT_FUND_WARN = "用户[%d]在[%s]无可退金额";
 
     public static void main(String[] args) {
-        Map<String, Object> map = new HashMap<>();
-        map.put("a",1);
-        map.put("b",1);
-        map.put("c",1);
-        map.put("d",1);
-        map.put("e",1);
-        Set<String> keySet = map.keySet();
+        String value = "mysql_id";
+//        String to = UPPER_UNDERSCORE.to(UPPER_CAMEL, value);
+        System.out.println(value.replace("_", ""));
 
-        Map<String, Object> map1 = new HashMap<>();
-        map1.put("a",1);
-        map1.put("b",1);
-        map1.put("d",1);
-        Set<String> keySet1 = map1.keySet();
 
-        Set<String> differenceSet = Sets.difference(keySet, keySet1);
-        System.out.println(differenceSet);
-        System.out.println(differenceSet.contains("c"));
+        Map<String, Integer> map = new HashMap<>();
+        map.put("a", 1);
+        map.put("b", 1);
+        map.put("c", 1);
+        map.forEach((k, v) -> map.put(k.toUpperCase(), map.remove(k)));
+        System.out.println(map);
     }
+
 }
