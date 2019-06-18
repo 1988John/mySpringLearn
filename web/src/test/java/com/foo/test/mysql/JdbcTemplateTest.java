@@ -61,9 +61,11 @@ public class JdbcTemplateTest {
         } catch (Exception e) {
             e.printStackTrace();
         }
-//        String sql = "select COLUMN_NAME from information_schema.COLUMNS where table_name = 'user' and  table_schema = 'foo'";
-//        List<Map<String, Object>> maps = jdbcTemplate.queryForList(sql, Collections.emptyMap());
-//        System.out.println(maps);
+
+        String sql = "select COLUMN_NAME from information_schema.COLUMNS where table_name = 'user' and  table_schema = 'foo'";
+        List<Map<String, Object>> mapList = jdbcTemplate.queryForList(sql, Collections.emptyMap());
+        List<String> column_name = mapList.stream().map(map -> (String) map.get("COLUMN_NAME")).collect(Collectors.toList());
+        System.out.println(column_name);
     }
 
     private static DataSource getDataSource(){
