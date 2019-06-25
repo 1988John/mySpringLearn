@@ -262,7 +262,11 @@
                 <artifactId>netty-all</artifactId>
                 <version>4.1.16.Final</version>
             </dependency>
-
+            <dependency>
+                <groupId>joda-time</groupId>
+                <artifactId>joda-time</artifactId>
+                <version>2.9.9</version>
+            </dependency>
 
         </dependencies>
     </dependencyManagement>
