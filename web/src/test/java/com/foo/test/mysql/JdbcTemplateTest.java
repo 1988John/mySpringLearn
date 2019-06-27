@@ -25,6 +25,7 @@ import org.springframework.jdbc.support.rowset.SqlRowSet;
 import org.springframework.jdbc.support.rowset.SqlRowSetMetaData;
 
 import com.foo.test.dao.Aa;
+import com.foo.test.dao.model.User;
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 
@@ -44,6 +45,11 @@ public class JdbcTemplateTest {
     public static void main(String[] args) {
         //创建jdbcTemplate对象，设置数据源
         NamedParameterJdbcTemplate jdbcTemplate = new NamedParameterJdbcTemplate(getDataSource());
+
+        List<User> query = jdbcTemplate.query("select * from user", new BeanPropertyRowMapper<>(User.class));
+        System.out.println(query);
+
+
         String s = jdbcTemplate.queryForObject("select database()", Collections.emptyMap(), String.class);
         System.out.println(s);
 
