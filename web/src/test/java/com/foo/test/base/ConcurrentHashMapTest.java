@@ -24,7 +24,6 @@ public class ConcurrentHashMapTest {
         concurrentHashMap.put("cc", 3);
         concurrentHashMap.mappingCount();
         concurrentHashMap.remove("cc");
-
         Integer cc = concurrentHashMap.get("cc");
         concurrentHashMap.size();
         System.out.println(cc);
