@@ -11,6 +11,7 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.foo.domain.user.User;
 import com.foo.service.annotation.PrintTime;
@@ -20,7 +21,7 @@ import com.foo.service.user.OrderService;
  * @author jiangwang
  * @date  2018/5/14
  */
-//@RestController
+@RestController
 @RequestMapping(value = "/user")
 @Validated
 public class UserController {
