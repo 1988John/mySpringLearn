@@ -12,10 +12,8 @@ import com.google.common.collect.Maps;
  */
 public class Test {
     public static void main(String[] args) {
-        Map<String,List<String>> map = Maps.newHashMap();
-        List<String> ids = map.computeIfAbsent("aa", list -> new ArrayList<>());
-        List<String> stringList = map.get("aa");
-        System.out.println(map.get("aa"));
-        System.out.println(ids);
+        String s = "你好，若你在使用快手的过程中遇到了问题，可以前往“快手客服”官方账号（快手ID：40300103）进行咨询<br/><a href=%s> 立即前往 </a>";
+        String format = String.format(s, "https//baidu.com");
+        System.out.println(format);
     }
 }
