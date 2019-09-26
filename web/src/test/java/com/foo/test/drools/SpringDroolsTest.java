@@ -1,8 +1,7 @@
 //package com.foo.test.drools;
 //
-//import com.foo.dao.aop.Dao;
 //import com.foo.domain.user.Product;
-//import com.foo.service.drools.SimpleService;
+//
 //import org.junit.Test;
 //import org.slf4j.Logger;
 //import org.slf4j.LoggerFactory;
@@ -30,4 +29,4 @@
 //
 //        logger.error("The discount is {}",product.getDiscount());
 //    }
-//}  
+//}
