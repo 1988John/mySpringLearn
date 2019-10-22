@@ -12,7 +12,7 @@
     <artifactId>service</artifactId>
     <packaging>war</packaging>
 
-    <name>service Maven Webapp</name>
+    <name>service</name>
     <!-- FIXME change it to the project's website -->
     <url>http://www.example.com</url>
 
@@ -41,9 +41,26 @@
         </dependency>
 
         <!-- drools -->
+        <!--<dependency>-->
+            <!--<groupId>org.drools</groupId>-->
+            <!--<artifactId>drools-spring</artifactId>-->
+        <!--</dependency>-->
+
+        <!-- drools -->
         <dependency>
             <groupId>org.drools</groupId>
-            <artifactId>drools-spring</artifactId>
+            <artifactId>drools-core</artifactId>
+            <version>${drools.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.drools</groupId>
+            <artifactId>drools-compiler</artifactId>
+            <version>${drools.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.drools</groupId>
+            <artifactId>drools-templates</artifactId>
+            <version>${drools.version}</version>
         </dependency>
 
     </dependencies>

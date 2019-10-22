@@ -31,7 +31,8 @@
       <slf4j.version>1.7.25</slf4j.version>
       <logback.version>1.1.7</logback.version>
       <project.version>1.0-SNAPSHOT</project.version>
-      <drools.version>7.7.0.Final</drools.version>
+      <!--<drools.version>7.7.0.Final</drools.version>-->
+      <drools.version>7.26.0.Final</drools.version>
   </properties>
 
     <dependencyManagement>
@@ -271,11 +272,11 @@
 
 
 
-            <dependency>
-                <groupId>org.drools</groupId>
-                <artifactId>drools-spring</artifactId>
-                <version>5.6.0.FINAL</version>
-            </dependency>
+            <!--<dependency>-->
+                <!--<groupId>org.drools</groupId>-->
+                <!--<artifactId>drools-spring</artifactId>-->
+                <!--<version>5.6.0.FINAL</version>-->
+            <!--</dependency>-->
 
             <!-- drools -->
             <dependency>

@@ -143,10 +143,10 @@
             <artifactId>hibernate-validator</artifactId>
         </dependency>
 
-        <dependency>
-            <groupId>org.drools</groupId>
-            <artifactId>drools-spring</artifactId>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>org.drools</groupId>-->
+            <!--<artifactId>drools-spring</artifactId>-->
+        <!--</dependency>-->
 
         <!-- drools -->
         <dependency>

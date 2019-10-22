@@ -1,4 +1,4 @@
-package com.foo.test.drools;
+package com.foo.test.drools.domain;
 
 /**
  * @author jiangwang3
