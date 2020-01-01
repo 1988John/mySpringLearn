@@ -1,4 +1,4 @@
-package com.foo.test.leetcode;
+package com.foo.test.leetcode.link;
 
 public class ListNode {
     public int val;

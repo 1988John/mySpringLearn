@@ -1,5 +1,7 @@
 package com.foo.test.leetcode;
 
+import com.foo.test.leetcode.link.ListNode;
+
 /**
  * @author fooisart
  * @date 21:33 19-08-2019
