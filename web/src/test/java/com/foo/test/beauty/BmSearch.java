@@ -11,10 +11,14 @@ public class BmSearch {
     private static Map<Character, Integer> map = new HashMap<>();
 
     public static void main(String[] args) {
-        String source = "abcacabdc";
-        String pattern = "abd";
-        buildBacCharIndexMap(pattern);
-        compareStr(source, pattern);
+//        String source = "abcacabdc";
+//        String pattern = "abd";
+//        buildBacCharIndexMap(pattern);
+//        compareStr(source, pattern);
+
+        System.out.println(false || false);
+        System.out.println(true || false);
+        System.out.println(true || true);
     }
     /**
      * 判断是否存在
