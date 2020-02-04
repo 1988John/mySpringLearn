@@ -11,6 +11,7 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.foo.domain.user.User;
 import com.foo.service.annotation.PrintTime;
@@ -20,7 +21,7 @@ import com.foo.service.user.OrderService;
  * @author jiangwang
  * @date  2018/5/14
  */
-//@RestController
+@RestController
 @RequestMapping(value = "/user")
 @Validated
 public class UserController {
@@ -30,8 +31,21 @@ public class UserController {
     @Resource private OrderService orderService;
 
     @RequestMapping(value = "/value", method={RequestMethod.GET})
-    public  String value(String myValue){
-        return myValue;
+    public  String value(String name){
+        return name;
+    }
+    @RequestMapping(value = "/exception", method={RequestMethod.GET})
+    public  int exceptionTest(int a){
+        return a / 0;
+    }
+    @RequestMapping(value = "/timeout", method={RequestMethod.GET})
+    public  int timeoutTest(int a){
+        try {
+            Thread.sleep(60000L);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return a;
     }
 
     @RequestMapping(value = "/domain", method={RequestMethod.GET})
