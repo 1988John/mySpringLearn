@@ -1,34 +1,43 @@
 @startuml
 
-RenderHandler <|.. AbstractRenderHandler
-AbstractRenderHandler <|-- IntownRenderHandler
-AbstractRenderHandler <|-- MomentRenderHandler
-AbstractRenderHandler <|-- OtherRenderHandler
+CscChatRoutingStrategy <|.. CscAbstractChatRoutingStrategy
+CscAbstractChatRoutingStrategy <|-- CscChatAverageRouting
+CscAbstractChatRoutingStrategy <|-- CscChatLoadRouting
+CscAbstractChatRoutingStrategy <|-- CscChatHistoryPriorityRouting
+CscAbstractChatRoutingStrategy <|-- CscChatLimitRateRouting
 
-interface RenderHandler {
+interface CscChatRoutingStrategy {
     +boolean support()
-    +handler()
+    +preDistribute()
+    +distribute()
+    +postDistribute()
 }
 
-abstract class AbstractRenderHandler {
-    +handler()
-    #doHandler()
+abstract class CscAbstractChatRoutingStrategy {
+    +preDistribute()
+    +distribute()
+    +postDistribute()
+    #doDistribute()
 }
 
-class IntownRenderHandler {
+class CscChatAverageRouting {
     +boolean support()
-    #doHandler()
+    #doDistribute()
 }
 
-class MomentRenderHandler {
+class CscChatLoadRouting {
     +boolean support()
-    #doHandler()
+    #doDistribute()
 }
 
-class OtherRenderHandler {
+class CscChatHistoryPriorityRouting {
     +boolean support()
-    #doHandler()
+    #doDistribute()
 }
 
+class CscChatLimitRateRouting {
+    +boolean support()
+    #doDistribute()
+}
 
 @enduml
