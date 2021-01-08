@@ -37,8 +37,8 @@ public class EchoServer {
             protected void initChannel(SocketChannel socketChannel) throws Exception {
                 //EchoServerHandler被标注为@shareable,所以我们可以总是使用同样的案例
                 socketChannel.pipeline()
-                        .addLast(serverHandler);
-//                        .addLast(fooEchoServerHandler);
+                        .addLast(serverHandler)
+                        .addLast(fooEchoServerHandler);
             }
         });
  
