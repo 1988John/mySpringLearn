@@ -8,5 +8,6 @@ public class GitTest {
     public static void main(String[] args) {
         System.out.println("这是master分支");
         System.out.println("first_rebase_branch-1");
+        System.out.println("first_rebase_branch-2");
     }
 }
