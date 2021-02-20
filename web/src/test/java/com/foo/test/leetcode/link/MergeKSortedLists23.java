@@ -1,4 +1,4 @@
-package com.foo.test.link;
+package com.foo.test.leetcode.link;
 
 import java.util.ArrayList;
 import java.util.Comparator;

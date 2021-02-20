@@ -1,6 +1,4 @@
-package com.foo.test.link;
-
-import com.foo.test.leetcode.link.ListNode;
+package com.foo.test.leetcode.link;
 
 /**
  * @author fooisart

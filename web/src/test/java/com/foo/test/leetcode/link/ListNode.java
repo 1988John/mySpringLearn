@@ -27,7 +27,7 @@ public class ListNode {
             return head;
         }
         ListNode preNode = null;
-        ListNode nextNode = null;
+        ListNode nextNode;
         while (head != null) {
             nextNode = head.next;
             head.next = preNode;
