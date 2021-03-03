@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.Map;
+import java.util.TreeMap;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
@@ -16,6 +17,9 @@ public class HashMapTest {
         map1.put("1", "1");
         map1.size();
 
+        TreeMap<Integer, Integer> treeMap = new TreeMap<>();
+        treeMap.put(1,2);
+        Integer t2 = treeMap.get(1);
 
         HashMap<Integer, Integer> hashMap = new HashMap<>();
         hashMap.put(1,1);

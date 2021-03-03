@@ -11,6 +11,8 @@ import java.util.concurrent.ScheduledExecutorService;
 public class ExecutorTest {
     public static void main(String[] args) {
         ExecutorService executorService = Executors.newScheduledThreadPool(1);
+        Executors.newCachedThreadPool();
+        Executors.newFixedThreadPool(1);
 //        executorService.submit();
 //        executorService.execute();
 
