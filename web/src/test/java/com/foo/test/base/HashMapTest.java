@@ -15,6 +15,7 @@ public class HashMapTest {
     public static void main(String[] args) {
         ConcurrentHashMap<String, String> map1 = new ConcurrentHashMap<>();
         map1.put("1", "1");
+        map1.put("2", "2");
         map1.size();
 
         TreeMap<Integer, Integer> treeMap = new TreeMap<>();
@@ -41,12 +42,13 @@ public class HashMapTest {
         }
 
 
-        LRULinkedHashMap<String,Integer> map = new LRULinkedHashMap<>(4);
+        LRULinkedHashMap<String,Integer> map = new LRULinkedHashMap<>(6);
         map.put("111",111);
         map.put("222",222);
         map.put("333",333);
         map.put("444",444);
         map.put("555",555);
+        map.get("333");
 
         Iterator<Map.Entry<String,Integer>> iterator = map.entrySet().iterator();
         while (iterator.hasNext()){
