@@ -8,8 +8,6 @@ import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.clients.producer.ProducerRecord;
 import org.apache.kafka.common.serialization.StringSerializer;
 
-import kafka.utils.timer.TimingWheel;
-
 /**
  * @author fooisart
  * @date 19:20 26-04-2019
@@ -31,9 +29,10 @@ public class ProducerDemo {
         Producer<String, String> producer = null;
         try {
             producer = new KafkaProducer<>(properties);
-            for (int i = 0; i < 100; i++) {
+            Noticer noticer = new Noticer();
+            for (int i = 0; i < 1; i++) {
                 String msg = "foo-kafka-Message " + i;
-                producer.send(new ProducerRecord<>(TOPIC, msg));
+                producer.send(new ProducerRecord<>(TOPIC, msg), noticer);
                 System.out.println("Sent:" + msg);
             }
         } catch (Exception e) {

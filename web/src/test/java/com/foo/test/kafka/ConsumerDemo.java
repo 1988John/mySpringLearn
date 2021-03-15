@@ -16,7 +16,7 @@ import org.apache.kafka.common.serialization.StringDeserializer;
  */
 public class ConsumerDemo {
 
-    private static final String TOPIC = "HelloWorld";
+    private static final String TOPIC = "HelloWorld-1";
     private static final String BROKER_LIST = "127.0.0.1:9092";
 
     public static void main(String[] args){
