@@ -11,7 +11,6 @@ public class ThreadLocalTest {
     static ThreadLocal<ThreadUser> userThreadLocal = new ThreadLocal<>();
     static ThreadLocal<String> strThreadLocal = new ThreadLocal<>();
     public static void main(String[] args) {
-        intThreadLocal.set(100);
         intThreadLocal.set(90);
         System.out.println(intThreadLocal.get());
 
