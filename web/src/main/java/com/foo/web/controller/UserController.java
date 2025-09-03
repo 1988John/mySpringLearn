@@ -1,5 +1,6 @@
 package com.foo.web.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -36,6 +37,7 @@ public class UserController {
 
     @RequestMapping(value = "/domain", method={RequestMethod.GET})
     public  String domain(User user){
+        System.out.println();
         return user.toString();
     }
 
@@ -78,6 +80,16 @@ public class UserController {
             e.printStackTrace();
         }
         return "abc";
+    }
+
+    public List<String> getUserNames(List<User> users) {
+        List<String> names = new ArrayList<>();
+        for (int i = 0; i < users.size(); i++) {
+            if (users.get(i) != null) {
+                names.add(users.get(i).getName() + " " + users.get(i).getSurname());
+            }
+        }
+        return names;
     }
 
 

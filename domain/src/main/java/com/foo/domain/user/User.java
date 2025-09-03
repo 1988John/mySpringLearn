@@ -31,4 +31,8 @@ public class User {
                 ", name='" + name + '\'' +
                 '}';
     }
+
+    public String getSurname() {
+        return "";
+    }
 }

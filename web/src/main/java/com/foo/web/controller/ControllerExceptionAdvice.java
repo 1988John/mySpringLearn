@@ -1,11 +1,13 @@
 package com.foo.web.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
 import javax.validation.ConstraintViolation;
 import javax.validation.ConstraintViolationException;
 
+import com.foo.domain.user.User;
 import org.hibernate.validator.method.MethodConstraintViolation;
 import org.hibernate.validator.method.MethodConstraintViolationException;
 import org.slf4j.Logger;
@@ -97,6 +99,16 @@ public class ControllerExceptionAdvice {
             stringBuilder.append(cv.getMessageTemplate());
         }
         return stringBuilder.toString();
+    }
+
+    public List<String> getUserNames11(List<User> users) {
+        List<String> names = new ArrayList<>();
+        for (int i = 0; i < users.size(); i++) {
+            if (users.get(i) != null) {
+                names.add(users.get(i).getName() + " " + users.get(i).getSurname());
+            }
+        }
+        return names;
     }
 
 }
